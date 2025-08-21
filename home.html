@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FQRS - Forensic Quality Reporting Solutions | Vulnerability Assessment & Penetration Testing</title>
     <meta name="description" content="FQRS offers expert vulnerability assessment and penetration testing services for mobile, web, and API security to protect your digital assets from cyber threats.">
-
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="FQRS: Vulnerability Assessment & Penetration Testing">
     <meta property="og:description" content="Specialized vulnerability assessment and penetration testing for mobile, web, and API security.">
@@ -15,15 +13,13 @@
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://www.fqrs.co.in">
     <meta property="og:type" content="website">
-
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@fqrs_official"> <!-- Placeholder: Replace with actual Twitter handle -->
-    <meta name="twitter:creator" content="@fqrs_official"> <!-- Placeholder: Replace with actual Twitter handle -->
+    <meta name="twitter:site" content="@fqrs_official">
+    <meta name="twitter:creator" content="@fqrs_official">
     <meta name="twitter:title" content="FQRS: Expert Cybersecurity & Penetration Testing">
     <meta name="twitter:description" content="Protect your digital assets with FQRS's specialized vulnerability assessment and penetration testing for mobile, web, and API security.">
     <meta name="twitter:image" content="https://www.fqrs.co.in/fqrs_logo.webp">
-
     <link rel="icon" href="https://www.fqrs.co.in/fqrs_logo.webp" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +35,6 @@
             --dark-slate: #0f172a;
             --light-slate: #f1f5f9;
         }
-
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
@@ -48,7 +43,6 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
-
         .cyber-grid {
             background-image:
                 linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
@@ -56,17 +50,14 @@
             background-size: 60px 60px;
             animation: gridMove 30s linear infinite;
         }
-
         @keyframes gridMove {
             0% {
                 background-position: 0 0;
             }
-
             100% {
                 background-position: 60px 60px;
             }
         }
-
 
         .service-card {
             transition: all 0.3s ease;
@@ -76,7 +67,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .service-card::before {
             content: '';
             position: absolute;
@@ -87,39 +77,31 @@
             background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.2), transparent);
             transition: left 0.5s;
         }
-
         .service-card:hover::before {
             left: 100%;
         }
-
         .service-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
             border-color: var(--cyber-green);
         }
-
         .glow-text {
             text-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
         }
-
         .pulse-border {
             animation: pulseBorder 2s infinite;
         }
-
         @keyframes pulseBorder {
             0% {
                 border-color: rgba(16, 185, 129, 0.2);
             }
-
             50% {
                 border-color: rgba(16, 185, 129, 0.8);
             }
-
             100% {
                 border-color: rgba(16, 185, 129, 0.2);
             }
         }
-
         .matrix-bg {
             background: linear-gradient(45deg,
                     rgba(15, 23, 42, 0.9) 0%,
@@ -127,7 +109,6 @@
                     rgba(15, 23, 42, 0.9) 100%);
             position: relative;
         }
-
         .matrix-bg::after {
             content: '';
             position: absolute;
@@ -139,17 +120,14 @@
             opacity: 0.3;
             animation: matrixScroll 15s linear infinite;
         }
-
         @keyframes matrixScroll {
             0% {
                 transform: translateY(0);
             }
-
             100% {
                 transform: translateY(-60px);
             }
         }
-
         .cyber-button {
             background: linear-gradient(45deg, #10b981, #1e3a8a);
             border: 2px solid transparent;
@@ -157,7 +135,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .cyber-button::before {
             content: '';
             position: absolute;
@@ -168,61 +145,50 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-
         .cyber-button:hover::before {
             left: 100%;
         }
-
         .cyber-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
         }
-
         .experience-tag {
             background: linear-gradient(45deg, #f59e0b, #ef4444);
             animation: tagGlow 3s ease-in-out infinite alternate;
         }
-
         @keyframes tagGlow {
             0% {
                 box-shadow: 0 0 5px rgba(245, 158, 11, 0.5);
             }
-
             100% {
                 box-shadow: 0 0 15px rgba(245, 158, 11, 0.6), 0 0 25px rgba(239, 68, 68, 0.3);
             }
         }
-
         .header-glass {
             background: #ffffff;
             border-bottom: 1px solid rgba(16, 185, 129, 0.3);
         }
-
         .section-dark {
             background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
         }
-
         .section-light {
             background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
         }
-
         .hero-background {
             position: relative;
             overflow: hidden;
         }
-
-        /* Styles from t2.html for background effects */
-        .defense-background {
-            position: absolute; /* Changed from fixed to absolute */
+        /* Neural Network Background Styles */
+        .neural-network-bg {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(ellipse at center, #0a0a1a 0%, #000000 100%);
+            background: linear-gradient(135deg, #0a0e1a 0%, #000000 100%);
             z-index: 0;
         }
-
-        #shieldCanvas {
+        #neuralCanvas {
             position: absolute;
             top: 0;
             left: 0;
@@ -230,185 +196,120 @@
             height: 100%;
             z-index: 1;
         }
-
-        .digital-grid {
+        .scan-lines {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image:
-                linear-gradient(rgba(0, 150, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 150, 255, 0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 150, 255, 0.03) 2px,
+                rgba(0, 150, 255, 0.03) 4px
+            );
+            z-index: 3;
+            pointer-events: none;
+            animation: scan 8s linear infinite;
+        }
+        @keyframes scan {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
+        }
+        /* Section Background Styles */
+        .section-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: 0;
-            animation: gridPulse 8s ease-in-out infinite;
         }
-
-        @keyframes gridPulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
-        }
-
-        .data-packet {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: #00ffcc;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #00ffcc;
-            z-index: 2;
-        }
-
-        .data-packet.malicious {
-            background: #ff3366;
-            box-shadow: 0 0 10px #ff3366;
-        }
-
-        .shield-segment {
-            position: absolute;
-            border: 2px solid rgba(0, 150, 255, 0.7);
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .firewall-particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(0, 150, 255, 0.8);
-            border-radius: 50%;
-            box-shadow: 0 0 8px rgba(0, 150, 255, 0.8);
+        .section-content {
+            position: relative;
             z-index: 1;
         }
-
-        .defense-indicator {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: #00ffcc;
-            font-size: 14px;
-            z-index: 10;
-            text-shadow: 0 0 5px #00ffcc;
+        /* Security Shields Background for Why Security Section */
+        .security-shields-bg {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+        }
+        /* Experience Logos Background */
+        .experience-logos-bg {
+            background: linear-gradient(45deg,
+                    rgba(15, 23, 42, 0.9) 0%,
+                    rgba(30, 58, 138, 0.1) 50%,
+                    rgba(15, 23, 42, 0.9) 100%);
+        }
+        /* Journey Path Background */
+        .journey-path-bg {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+        }
+        /* Case Study Background */
+        .case-study-bg {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+        }
+        /* Vulnerabilities Background */
+        .vulnerabilities-bg {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+        /* Services Background */
+        .services-bg {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+        }
+        /* Contact Background */
+        .contact-bg {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+/* Global text readability improvements */
+        .section-content h1,
+        .section-content h2,
+        .section-content h3,
+        .section-content h4,
+        .section-content h5,
+        .section-content h6,
+        .section-content p,
+        .service-card h3,
+        .service-card p {
+            /* Default subtle shadow for dark text on light backgrounds */
+            text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.05);
         }
 
-        .status-item {
-            margin: 5px 0;
-            display: flex;
-            align-items: center;
+        /* Specific adjustments for text on dark animated backgrounds */
+        .hero-background .section-content h1,
+        .hero-background .section-content p {
+            text-shadow: 0px 0px 5px rgba(0, 255, 255, 0.8), 0px 0px 15px rgba(0, 255, 255, 0.6); /* Cyan glow for hero */
         }
 
-        .status-light {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            margin-right: 10px;
-            box-shadow: 0 0 5px currentColor;
+        .experience-logos-bg .section-content h2,
+        .experience-logos-bg .section-content p {
+            text-shadow: 0px 0px 5px rgba(0, 255, 255, 0.8), 0px 0px 15px rgba(0, 255, 255, 0.6); /* Cyan glow for experience section */
         }
 
-        .status-active {
-            background: #00ffcc;
-            color: #00ffcc;
-            animation: pulse 2s infinite;
-        }
-
-        .status-warning {
-            background: #ffaa00;
-            color: #ffaa00;
-            animation: pulse 1s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        .threat-alert {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(10, 10, 26, 0.8);
-            border: 1px solid #ff3366;
-            border-radius: 5px;
-            padding: 15px;
-            color: #ff3366;
-            font-size: 14px;
-            z-index: 10;
-            max-width: 300px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .threat-alert.active {
-            opacity: 1;
-        }
-
-        .alert-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .alert-icon {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-            border-radius: 50%;
-            background: #ff3366;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: alertPulse 1s infinite;
-        }
-
-        @keyframes alertPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-
-        .defense-wave {
-            position: absolute;
-            border: 2px solid rgba(0, 150, 255, 0.7);
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
-            z-index: 1;
-            pointer-events: none;
-            animation: waveExpand 2s ease-out forwards;
-        }
-
-        @keyframes waveExpand {
-            0% {
-                width: 50px;
-                height: 50px;
-                opacity: 1;
-            }
-            100% {
-                width: 500px;
-                height: 500px;
-                opacity: 0;
-            }
-        }
-
-        .encryption-symbol {
-            position: absolute;
-            color: rgba(0, 150, 255, 0.6);
-            font-size: 16px;
-            z-index: 1;
-            animation: symbolFloat 10s linear infinite;
-        }
-
-        @keyframes symbolFloat {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
-            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        /* Specific adjustments for text on light animated backgrounds */
+        .security-shields-bg .section-content h2,
+        .security-shields-bg .section-content p,
+        .security-shields-bg .service-card h3,
+        .security-shields-bg .service-card p,
+        .journey-path-bg .section-content h2,
+        .journey-path-bg .section-content p,
+        .case-study-bg .section-content h2,
+        .case-study-bg .section-content p,
+        .vulnerabilities-bg .section-content h2,
+        .vulnerabilities-bg .section-content p,
+        .vulnerabilities-bg .service-card h3,
+        .vulnerabilities-bg .service-card p,
+        .services-bg .section-content h2,
+        .services-bg .section-content p,
+        .services-bg .service-card h3,
+        .services-bg .service-card p,
+        .contact-bg .section-content h2,
+        .contact-bg .section-content p {
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), 0 0 3px rgba(255, 255, 255, 0.3); /* Light shadow for dark text on light backgrounds */
+            color: #1a202c; /* Ensure text is dark enough */
         }
     </style>
 </head>
-
 <body class="antialiased">
     <main>
     <!-- Header & Navigation -->
@@ -418,7 +319,6 @@
                 <img src="https://www.fqrs.co.in/logo.webp" alt="FQRS Logo" class="h-24"
                     onerror="this.onerror=null;this.src='https://placehold.co/100x96/10b981/ffffff?text=FQRS';">
             </a>
-
             <!-- Center Content -->
             <div class="hidden lg:flex flex-col items-center">
                 <div class="flex items-center space-x-2 mb-1">
@@ -458,7 +358,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="hidden md:flex space-x-8">
                 <a href="#about"
                     class="text-slate-700 hover:text-green-600 transition-all duration-300 font-medium relative group">
@@ -506,14 +405,12 @@
             </div>
         </div>
     </header>
-
     <!-- Hero Section -->
     <section id="hero" class="hero-background py-32 text-center relative min-h-screen flex items-center">
-        <div class="defense-background">
-            <div class="digital-grid"></div>
-            <canvas id="shieldCanvas"></canvas>
-            <!-- Defense status indicators - removed as it's not a general background effect -->
-            <!-- Threat alert - removed as it's not a general background effect -->
+        <!-- Neural Network Background -->
+        <div class="neural-network-bg">
+            <canvas id="neuralCanvas"></canvas>
+            <div class="scan-lines"></div>
         </div>
         <div class="container mx-auto px-4 relative z-10">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white glow-text">
@@ -521,7 +418,6 @@
                 <span class="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">Expert
                     Penetration Testing</span>
             </h1>
-
             <!-- FQRS Meaning -->
             <div class="mb-8">
                 <div
@@ -537,7 +433,6 @@
                         Solutions</span>
                 </div>
             </div>
-
             <p class="text-base md:text-lg lg:text-xl text-slate-200 max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed">
                 Specialized
                 vulnerability assessment and penetration testing for mobile, web, and API security to safeguard your
@@ -558,10 +453,10 @@
             </svg>
         </div>
     </section>
-
     <!-- About Section - Why Security Matters -->
-    <section id="about" class="section-dark py-24">
-        <div class="container mx-auto px-4">
+    <section id="about" class="section-dark security-shields-bg py-24 relative overflow-hidden">
+        <canvas id="shieldsCanvas" class="section-canvas"></canvas>
+        <div class="container mx-auto px-4 section-content">
             <h2 class="text-4xl font-bold text-center mb-6 text-slate-800">Why Security is Critical for Your Business
             </h2>
             <p class="text-center text-slate-600 max-w-4xl mx-auto mb-20 text-xl leading-relaxed">In today's digital
@@ -603,7 +498,6 @@
                         security can only be tested by understanding your application's business flow as an external
                         consumer
                         and then performing a real-world assessment.</p>
-
                     <!-- Passion Statement -->
                     <div
                         class="mt-8 bg-gradient-to-r from-green-100 to-blue-100 p-8 rounded-2xl border border-green-300">
@@ -653,7 +547,7 @@
                                     class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
                                     <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd"
-                                            d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                                            d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01-.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
                                             clip-rule="evenodd"></path>
                                     </svg>
                                 </div>
@@ -668,7 +562,6 @@
                             </p>
                         </div>
                     </div>
-
                     <div class="grid md:grid-cols-2 gap-8 mt-8">
                         <div class="bg-gradient-to-br from-blue-50 to-green-50 p-6 rounded-xl border border-blue-200">
                             <h4 class="text-xl font-semibold text-slate-800 mb-4">Why Independent Testing Matters</h4>
@@ -689,98 +582,95 @@
                 </div>
             </div>
     </section>
-
     <!-- Case Study Section - Experience -->
-    <section id="experience" class="section-light matrix-bg py-24">
-        <div class="container mx-auto px-4 text-center max-w-6xl relative z-10">
-            <h2 class="text-2xl md:text-4xl font-bold mb-4 md:mb-6 text-slate-800">Our Experience</h2>
-            <p class="text-lg md:text-xl text-slate-600 max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed">We have
+    <section id="experience" class="section-light experience-logos-bg py-24 relative overflow-hidden">
+        <canvas id="logosCanvas" class="section-canvas"></canvas>
+        <div class="container mx-auto px-4 text-center section-content max-w-6xl relative z-10">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 md:mb-6 text-white">Our Experience</h2>
+            <p class="text-lg md:text-xl text-slate-200 max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed">We have
                 successfully identified
                 and responsibly disclosed critical vulnerabilities across diverse industries, helping secure millions of
                 users worldwide.</p>
-
             <!-- Compact Platform Grid -->
             <div class="max-w-6xl mx-auto mb-4 md:mb-6">
                 <div class="flex flex-wrap justify-center items-center gap-2 md:gap-3">
                     <span
-                        class="bg-white px-2 md:px-3 py-1 md:py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-xs md:text-sm hover:border-green-300 transition-colors">Gmail</span>
+                        class="bg-white/20 backdrop-blur-sm px-2 md:px-3 py-1 md:py-2 rounded-md border border-white/30 text-white font-medium text-xs md:text-sm hover:border-green-300 transition-colors">Gmail</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">Google
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">Google
                         Workspace</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">Instagram</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">Instagram</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">Facebook</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">Facebook</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">TikTok</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">TikTok</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">Skype</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">Skype</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">PUBG
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">PUBG
                         / BGMI</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">FreeFire</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">FreeFire</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">MPL</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">MPL</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">ShareChat</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">ShareChat</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">Moj</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">Moj</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">Tango</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">Tango</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">Pococha</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">Pococha</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">Tiki</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">Tiki</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">Zilli</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">Zilli</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">Trendo</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">Trendo</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">Poppo</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">Poppo</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">Zomato</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">Zomato</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">Zepto</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">Zepto</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">Rapido</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">Rapido</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">WazirX</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">WazirX</span>
                     <span
-                        class="bg-white px-3 py-2 rounded-md border border-slate-200 text-slate-700 font-medium text-sm hover:border-green-300 transition-colors">Paytm</span>
+                        class="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-md border border-white/30 text-white font-medium text-sm hover:border-green-300 transition-colors">Paytm</span>
                 </div>
             </div>
-
             <!-- Simple Summary -->
             <div class="text-center">
-                <p class="text-slate-600 font-medium">Securing platforms across gaming, social media, live streaming,
+                <p class="text-slate-200 font-medium">Securing platforms across gaming, social media, live streaming,
                     e-commerce, and financial technology</p>
             </div>
-
             <!-- Professional Ethics Statement -->
             <div class="mt-16 max-w-4xl mx-auto">
-                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-lg">
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
                     <div class="flex items-start space-x-4">
                         <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-blue-300" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                         clip-rule="evenodd"></path>
-                                </svg>
+                                    </svg>
                             </div>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-semibold text-slate-800 mb-3">Our Professional Ethics &
+                            <h3 class="text-xl font-semibold text-white mb-3">Our Professional Ethics &
                                 Confidentiality</h3>
-                            <p class="text-slate-600 leading-relaxed">
+                            <p class="text-slate-200 leading-relaxed">
                                 We maintain the highest standards of professional ethics and confidentiality. All
                                 vulnerability information remains strictly confidential and is never disclosed publicly
                                 without explicit permission from platform owners. We follow responsible disclosure
                                 practices and work collaboratively with organizations to ensure security improvements
                                 benefit everyone while protecting sensitive information.
                             </p>
-                            <p class="text-slate-600 leading-relaxed mt-4">
+                            <p class="text-slate-200 leading-relaxed mt-4">
                                 Our engagement policies and terms are tailored to each contract, ensuring clear and specific
                                 agreements for every client.
                             </p>
@@ -789,10 +679,10 @@
                 </div>
             </div>
     </section>
-
     <!-- Our Journey Section -->
-    <section class="section-dark py-16 md:py-20">
-        <div class="container mx-auto px-4">
+    <section id="journey" class="section-dark journey-path-bg py-16 md:py-20 relative overflow-hidden">
+        <canvas id="journeyCanvas" class="section-canvas"></canvas>
+        <div class="container mx-auto px-4 section-content">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-2xl md:text-4xl font-bold text-center mb-4 md:mb-6 text-slate-800">Our Journey</h2>
                 <p
@@ -800,14 +690,12 @@
                     From individual
                     researcher to trusted cybersecurity partner - a decade of dedication to securing the digital world.
                 </p>
-
                 <!-- Desktop Timeline -->
                 <div class="hidden md:block relative">
                     <!-- Timeline Line -->
                     <div
                         class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-green-400 to-blue-500 rounded-full">
                     </div>
-
                     <!-- Timeline Items -->
                     <div class="space-y-12">
                         <!-- Individual Research Phase -->
@@ -835,7 +723,6 @@
                             </div>
                             <div class="w-1/2 pl-8"></div>
                         </div>
-
                         <!-- Startup Formation -->
                         <div class="flex items-center">
                             <div class="w-1/2 pr-8"></div>
@@ -862,7 +749,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- 10+ Years Expertise -->
                         <div class="flex items-center">
                             <div class="w-1/2 pr-8 text-right">
@@ -890,7 +776,6 @@
                             </div>
                             <div class="w-1/2 pl-8"></div>
                         </div>
-
                         <!-- Best Practices Leadership -->
                         <div class="flex items-center">
                             <div class="w-1/2 pr-8"></div>
@@ -920,7 +805,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Mobile Timeline -->
                 <div class="md:hidden space-y-6">
                     <div class="flex items-start space-x-4">
@@ -936,7 +820,6 @@
                                 researcher, discovering vulnerabilities and responsibly reporting them to companies.</p>
                         </div>
                     </div>
-
                     <div class="flex items-start space-x-4">
                         <div
                             class="w-10 h-10 bg-blue-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center flex-shrink-0">
@@ -952,7 +835,6 @@
                                 FQRS as a startup dedicated to cybersecurity excellence.</p>
                         </div>
                     </div>
-
                     <div class="flex items-start space-x-4">
                         <div
                             class="w-10 h-10 bg-purple-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center flex-shrink-0">
@@ -960,15 +842,14 @@
                                 <path fill-rule="evenodd"
                                     d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                     clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
+                                    </svg>
+                                </div>
                         <div class="bg-white p-4 rounded-lg shadow-md border border-slate-200 flex-1">
                             <h3 class="text-lg font-bold text-slate-800 mb-2">10+ Years of Expertise</h3>
                             <p class="text-slate-600 text-sm leading-relaxed">Accumulated over a decade of research and
                                 expertise spanning from software development to advanced security practices.</p>
                         </div>
                     </div>
-
                     <div class="flex items-start space-x-4">
                         <div
                             class="w-10 h-10 bg-green-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center flex-shrink-0">
@@ -976,8 +857,8 @@
                                 <path fill-rule="evenodd"
                                     d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                                     clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
+                                    </svg>
+                                </div>
                         <div class="bg-white p-4 rounded-lg shadow-md border border-slate-200 flex-1">
                             <h3 class="text-lg font-bold text-slate-800 mb-2">Best Practices Leadership</h3>
                             <p class="text-slate-600 text-sm leading-relaxed">Today, we judge and advocate for the best
@@ -986,7 +867,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Summary Statement -->
                 <div
                     class="mt-16 text-center bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-2xl border border-green-200">
@@ -1000,10 +880,10 @@
             </div>
         </div>
     </section>
-
     <!-- Google Workspace Case Study -->
-    <section class="section-dark py-16 md:py-20">
-        <div class="container mx-auto px-4">
+    <section id="case-study" class="section-dark case-study-bg py-16 md:py-20 relative overflow-hidden">
+        <canvas id="caseStudyCanvas" class="section-canvas"></canvas>
+        <div class="container mx-auto px-4 section-content">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-2xl md:text-4xl font-bold text-center mb-4 md:mb-6 text-slate-800">Major Impact: Google
                     Workspace & Gmail
@@ -1014,12 +894,10 @@
                     security
                     research identified critical vulnerabilities in Google's enterprise and consumer platforms,
                     preventing massive-scale abuse.</p>
-
                 <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
                     <div class="bg-gradient-to-r from-blue-600 to-green-600 p-6">
                         <h3 class="text-2xl font-bold text-white text-center">Critical Findings in Google Ecosystem</h3>
                     </div>
-
                     <div class="p-8">
                         <div class="grid md:grid-cols-2 gap-8">
                             <div class="space-y-6">
@@ -1030,7 +908,6 @@
                                         vulnerability allowing users to obtain higher-tier plan features without proper
                                         authorization, potentially costing Google millions in lost revenue.</p>
                                 </div>
-
                                 <div class="border-l-4 border-green-500 pl-6">
                                     <h4 class="text-xl font-semibold text-slate-800 mb-3">Bulk Account Creation Bypass
                                     </h4>
@@ -1039,7 +916,6 @@
                                         generation, leading to potential spam campaigns and bot networks.</p>
                                 </div>
                             </div>
-
                             <div class="space-y-6">
                                 <div class="bg-red-50 p-6 rounded-xl border border-red-200">
                                     <h4 class="text-lg font-semibold text-red-800 mb-3">Prevented Impact</h4>
@@ -1062,7 +938,6 @@
                                         </li>
                                     </ul>
                                 </div>
-
                                 <div class="bg-green-50 p-6 rounded-xl border border-green-200">
                                     <h4 class="text-lg font-semibold text-green-800 mb-3">Global Impact</h4>
                                     <p class="text-green-700 leading-relaxed">Our responsible disclosure helped protect
@@ -1072,14 +947,13 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="mt-8 bg-blue-50 p-6 rounded-xl border border-blue-200">
                             <div class="flex items-center mb-4">
                                 <svg class="w-8 h-8 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                         clip-rule="evenodd"></path>
-                                </svg>
+                                    </svg>
                                 <h4 class="text-xl font-semibold text-blue-800">Why This Matters for Your Business</h4>
                             </div>
                             <p class="text-blue-700 leading-relaxed">If vulnerabilities of this scale can exist in
@@ -1093,15 +967,14 @@
             </div>
         </div>
     </section>
-
     <!-- Critical Vulnerabilities Section -->
-    <section class="section-light py-20">
-        <div class="container mx-auto px-4">
+    <section id="vulnerabilities" class="section-light vulnerabilities-bg py-20 relative overflow-hidden">
+        <canvas id="vulnerabilitiesCanvas" class="section-canvas"></canvas>
+        <div class="container mx-auto px-4 section-content">
             <h2 class="text-4xl font-bold text-center mb-6 text-slate-800">Majority of Vulnerabilities We Identify</h2>
             <p class="text-center text-slate-600 max-w-4xl mx-auto mb-16 text-xl leading-relaxed">Based on our extensive
                 experience across platforms, these are the most common high-impact vulnerabilities we discover and help
                 remediate.</p>
-
             <div class="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
                 <!-- Account Takeover -->
                 <div class="bg-white p-6 rounded-xl border border-red-200 shadow-lg">
@@ -1119,24 +992,22 @@
                         privilege escalation vulnerabilities allowing unauthorized access to user accounts across all
                         platform types.</p>
                 </div>
-
-            <!-- Coin Crediting -->
-            <div class="bg-white p-6 rounded-xl border border-orange-200 shadow-lg">
-                <div class="flex items-center mb-4">
-                    <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mr-3">
-                        <svg class="w-5 h-5 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.736 6.979C9.208 6.193 9.696 6 10 6c.304 0 .792.193 1.264.979.457.764.736 1.794.736 3.021 0 1.227-.279 2.257-.736 3.021C10.792 13.807 10.304 14 10 14c-.304 0-.792-.193-1.264-.979C8.279 12.257 8 11.227 8 10c0-1.227.279-2.257.736-3.021z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-orange-700">Coin Crediting Vulnerabilities</h3>
+                <!-- Coin Crediting -->
+                <div class="bg-white p-6 rounded-xl border border-orange-200 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.736 6.979C9.208 6.193 9.696 6 10 6c.304 0 .792.193 1.264.979.457.764.736 1.794.736 3.021 0 1.227-.279 2.257-.736 3.021C10.792 13.807 10.304 14 10 14c-.304 0-.792-.193-1.264-.979C8.279 12.257 8 11.227 8 10c0-1.227.279-2.257.736-3.021z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-orange-700">Coin Crediting Vulnerabilities</h3>
                 </div>
                 <p class="text-slate-600 leading-relaxed">Unauthorized virtual currency manipulation, free coin
                     generation, and payment bypass flaws in gaming and social platforms leading to direct financial
                     losses.</p>
             </div>
-
             <!-- Bulk Account Creation -->
             <div class="bg-white p-6 rounded-xl border border-blue-200 shadow-lg">
                 <div class="flex items-center mb-4">
@@ -1152,7 +1023,6 @@
                 <p class="text-slate-600 leading-relaxed">Registration bypass vulnerabilities in live streaming
                     applications enabling mass fake account creation, bot networks, and platform manipulation.</p>
             </div>
-
             <!-- Payment Bypass -->
             <div class="bg-white p-6 rounded-xl border border-green-200 shadow-lg">
                 <div class="flex items-center mb-4">
@@ -1161,21 +1031,20 @@
                             <path fill-rule="evenodd"
                                 d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"
                                 clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-green-700">Payment Bypass</h3>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-700">Payment Bypass</h3>
                 </div>
                 <p class="text-slate-600 leading-relaxed">Payment gateway manipulation, transaction validation
                     flaws, and premium feature access without payment in e-commerce and subscription-based
                     platforms.</p>
             </div>
-
         </div>
     </section>
-
     <!-- Services Section -->
-    <section id="services" class="section-dark py-24">
-        <div class="container mx-auto px-4">
+    <section id="services" class="section-dark services-bg py-24 relative overflow-hidden">
+        <canvas id="servicesCanvas" class="section-canvas"></canvas>
+        <div class="container mx-auto px-4 section-content">
             <h2 class="text-4xl font-bold text-center mb-6 text-slate-800">Our Comprehensive Services</h2>
             <p class="text-center text-slate-600 max-w-5xl mx-auto mb-20 text-xl leading-relaxed">We provide a
                 full-spectrum penetration testing engagement that combines automated and manual methods to find even the
@@ -1200,7 +1069,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                             stroke="currentColor" class="w-16 h-16 text-green-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                                d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3m-3 0h3" />
                         </svg>
                     </div>
                     <h3 class="font-semibold text-2xl text-green-700 mb-4">Mobile Application Testing</h3>
@@ -1224,7 +1093,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                             stroke="currentColor" class="w-16 h-16 text-green-700">
                             <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c.251.023.501.05.75.082m-.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c.232.232.348.694.348 1.039v2.411c0 .26-.104.509-.288.693A.75.75 0 0121 20.25h-9c-.356 0-.694-.074-.992-.198a.75.75 0 01-.454-.275L8.8 18.2m0 0A24.301 24.301 0 015.2 15.8m14.6 2.4a24.301 24.301 0 01-5.15.738c-1.715 0-3.384-.132-4.992-.389" />
+                                d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c.251.023.501.05.75.082m-.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c.232.232.348.694.348 1.039v2.411c0 .26-.104.509-.288.693A.75.75 0 0221 20.25h-9c-.356 0-.694-.074-.992-.198a.75.75 0 01-.454-.275L8.8 18.2m0 0A24.301 24.301 0 015.2 15.8m14.6 2.4a24.301 24.301 0 01-5.15.738c-1.715 0-3.384-.132-4.992-.389" />
                         </svg>
                     </div>
                     <h3 class="font-semibold text-2xl text-green-700 mb-4">In-depth Methodology</h3>
@@ -1258,17 +1127,16 @@
             </div>
         </div>
     </section>
-
     <!-- Contact Section -->
-    <section id="contact" class="section-light py-24 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-green-900/20 to-purple-900/20"></div>
-        <div class="container mx-auto px-4 text-center relative z-10">
+    <section id="contact" class="section-light contact-bg py-24 relative overflow-hidden">
+        <canvas id="contactCanvas" class="section-canvas"></canvas>
+        <div class="container mx-auto px-4 text-center section-content">
             <h2 class="text-2xl md:text-4xl font-bold text-slate-800 mb-4 md:mb-6">Ready to Secure Your Platform?</h2>
             <p class="text-lg md:text-xl text-slate-600 max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed">We're confident
                 that a
                 well-executed penetration testing program will significantly enhance your security, protect your users,
                 and maintain their trust. Contact us to discuss your specific needs.</p>
-            <div class="max-w-2xl mx-auto bg-white p-6 md:p-10 rounded-2xl border border-green-600/30 shadow-lg">
+yo            <div class="max-w-2xl mx-auto bg-white/50 backdrop-blur-sm p-6 md:p-10 rounded-2xl border border-green-600/30 shadow-lg">
                 <p class="text-slate-700 text-lg md:text-xl">
                     For direct inquiries, please email us at:
                     <a href="mailto:contact@fqrs.co.in" class="text-green-600 hover:underline font-semibold">contact@fqrs.co.in</a>
@@ -1276,14 +1144,12 @@
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="bg-slate-800 py-8 border-t border-green-600/20">
         <div class="container mx-auto px-4 text-center">
             <p class="text-slate-300 text-lg">&copy; 2024 FQRS. All rights reserved.</p>
         </div>
     </footer>
-
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1294,377 +1160,1064 @@
             });
         });
 
-
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
         // Close mobile menu when clicking on links
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
-
-        // Canvas setup
-        const canvas = document.getElementById('shieldCanvas');
-        const ctx = canvas.getContext('2d');
         
-        // Set canvas size
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+        // Hero Section - Neural Network Animation
+        const neuralCanvas = document.getElementById('neuralCanvas');
+        const neuralCtx = neuralCanvas.getContext('2d');
+        
+        function resizeNeuralCanvas() {
+            neuralCanvas.width = window.innerWidth;
+            neuralCanvas.height = window.innerHeight;
         }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
+        resizeNeuralCanvas();
+        window.addEventListener('resize', resizeNeuralCanvas);
         
-        // Shield properties
-        const shield = {
-            x: canvas.width / 2,
-            y: canvas.height / 2,
-            radius: Math.min(canvas.width, canvas.height) * 0.3,
-            segments: 8,
-            rotation: 0,
-            rotationSpeed: 0.001,
-            pulsePhase: 0,
-            pulseSpeed: 0.02
-        };
+        // Neural network nodes
+        const neuralNodes = [];
+        const neuralNodeCount = 50;
+        const neuralMaxDistance = 150;
         
-        // Shield segments
-        const shieldSegments = [];
-        
-        // Initialize shield segments
-        function initShieldSegments() {
-            shieldSegments.length = 0;
-            
-            for (let i = 0; i < shield.segments; i++) {
-                const angle = (i / shield.segments) * Math.PI * 2;
-                const segment = {
-                    angle: angle,
-                    health: 100,
-                    color: `rgba(0, 150, 255, 0.7)`
-                };
-                shieldSegments.push(segment);
-            }
+        // Create nodes
+        for (let i = 0; i < neuralNodeCount; i++) {
+            neuralNodes.push({
+                x: Math.random() * neuralCanvas.width,
+                y: Math.random() * neuralCanvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                radius: Math.random() * 3 + 2,
+                color: `rgba(0, ${Math.floor(Math.random() * 155) + 100}, 255, ${Math.random() * 0.5 + 0.5})`
+            });
         }
-        initShieldSegments();
-        
-        // Draw shield
-        function drawShield() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // Update shield position to center
-            shield.x = canvas.width / 2;
-            shield.y = canvas.height / 2;
-            
-            // Update rotation and pulse
-            shield.rotation += shield.rotationSpeed;
-            shield.pulsePhase += shield.pulseSpeed;
-            const pulseFactor = 1 + Math.sin(shield.pulsePhase) * 0.05;
-            
-            // Draw shield segments
-            ctx.save();
-            ctx.translate(shield.x, shield.y);
-            ctx.rotate(shield.rotation);
-            
-            for (let i = 0; i < shield.segments; i++) {
-                const segment = shieldSegments[i];
-                const startAngle = segment.angle;
-                const endAngle = startAngle + (Math.PI * 2) / shield.segments;
-                
-                // Draw segment arc
-                ctx.beginPath();
-                ctx.arc(0, 0, shield.radius * pulseFactor, startAngle, endAngle);
-                ctx.lineWidth = 8;
-                ctx.strokeStyle = segment.color;
-                ctx.stroke();
-                
-                // Draw segment connector
-                ctx.beginPath();
-                ctx.moveTo(0, 0);
-                ctx.lineTo(
-                    Math.cos(startAngle) * shield.radius * pulseFactor,
-                    Math.sin(startAngle) * shield.radius * pulseFactor
-                );
-                ctx.lineWidth = 4;
-                ctx.stroke();
-                
-                // Draw segment connector
-                ctx.beginPath();
-                ctx.moveTo(0, 0);
-                ctx.lineTo(
-                    Math.cos(endAngle) * shield.radius * pulseFactor,
-                    Math.sin(endAngle) * shield.radius * pulseFactor
-                );
-                ctx.lineWidth = 4;
-                ctx.stroke();
-            }
-            
-            // Draw inner shield
-            ctx.beginPath();
-            ctx.arc(0, 0, shield.radius * 0.7 * pulseFactor, 0, Math.PI * 2);
-            ctx.lineWidth = 6;
-            ctx.strokeStyle = 'rgba(0, 200, 255, 0.5)';
-            ctx.stroke();
-            
-            // Draw core
-            ctx.beginPath();
-            ctx.arc(0, 0, shield.radius * 0.3 * pulseFactor, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(0, 220, 255, 0.3)';
-            ctx.fill();
-            ctx.lineWidth = 4;
-            ctx.strokeStyle = 'rgba(0, 220, 255, 0.8)';
-            ctx.stroke();
-            
-            ctx.restore();
-            
-            // Continue animation
-            requestAnimationFrame(drawShield);
-        }
-        drawShield();
         
         // Data packets
-        const dataPackets = [];
-        const maxPackets = 20;
-        
-        class DataPacket {
-            constructor() {
-                this.reset();
-            }
-            
-            reset() {
-                // Random position on the edge of the screen
-                const side = Math.floor(Math.random() * 4);
-                
-                switch(side) {
-                    case 0: // Top
-                        this.x = Math.random() * canvas.width;
-                        this.y = -10;
-                        break;
-                    case 1: // Right
-                        this.x = canvas.width + 10;
-                        this.y = Math.random() * canvas.height;
-                        break;
-                    case 2: // Bottom
-                        this.x = Math.random() * canvas.width;
-                        this.y = canvas.height + 10;
-                        break;
-                    case 3: // Left
-                        this.x = -10;
-                        this.y = Math.random() * canvas.height;
-                        break;
-                }
-                
-                // Random target near the shield
-                const angle = Math.random() * Math.PI * 2;
-                const distance = shield.radius * (0.5 + Math.random() * 0.5);
-                this.targetX = shield.x + Math.cos(angle) * distance;
-                this.targetY = shield.y + Math.sin(angle) * distance;
-                
-                // Speed and properties
-                this.speed = 1 + Math.random() * 2;
-                this.size = 4 + Math.random() * 4;
-                this.malicious = Math.random() > 0.7; // 30% chance to be malicious
-                
-                // Create DOM element
-                this.element = document.createElement('div');
-                this.element.className = 'data-packet';
-                if (this.malicious) {
-                    this.element.classList.add('malicious');
-                }
-                this.element.style.width = this.size + 'px';
-                this.element.style.height = this.size + 'px';
-                document.querySelector('.defense-background').appendChild(this.element);
-                
-                this.updatePosition();
-            }
-            
-            updatePosition() {
-                this.element.style.left = this.x + 'px';
-                this.element.style.top = this.y + 'px';
-            }
-            
-            update() {
-                // Move towards target
-                const dx = this.targetX - this.x;
-                const dy = this.targetY - this.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance > 5) {
-                    this.x += (dx / distance) * this.speed;
-                    this.y += (dy / distance) * this.speed;
-                    this.updatePosition();
-                } else {
-                    // Reached target
-                    if (this.malicious) {
-                        // Malicious packet hits shield
-                        this.hitShield();
-                    } else {
-                        // Legitimate packet passes through
-                        this.passThrough();
-                    }
-                    
-                    // Reset packet
-                    this.element.remove();
-                    this.reset();
-                }
-            }
-            
-            hitShield() {
-                // Find which segment was hit
-                const angle = Math.atan2(this.y - shield.y, this.x - shield.x);
-                const normalizedAngle = (angle - shield.rotation + Math.PI * 2) % (Math.PI * 2);
-                const segmentIndex = Math.floor(normalizedAngle / (Math.PI * 2) * shield.segments);
-                
-                if (segmentIndex >= 0 && segmentIndex < shieldSegments.length) {
-                    // Damage the segment
-                    shieldSegments[segmentIndex].health -= 10;
-                    
-                    // Change color based on health
-                    const health = shieldSegments[segmentIndex].health;
-                    if (health > 70) {
-                        shieldSegments[segmentIndex].color = `rgba(0, 150, 255, 0.7)`;
-                    } else if (health > 30) {
-                        shieldSegments[segmentIndex].color = `rgba(255, 170, 0, 0.7)`;
-                    } else {
-                        shieldSegments[segmentIndex].color = `rgba(255, 51, 102, 0.7)`;
-                    }
-                    
-                    // Create defense wave
-                    createDefenseWave(this.x, this.y);
-                    
-                    // Create firewall particles
-                    createFirewallParticles(this.x, this.y);
-                }
-            }
-            
-            passThrough() {
-                // Create a small effect for legitimate packets
-                createFirewallParticles(this.x, this.y, 5);
-            }
-        }
+        const neuralDataPackets = [];
+        const neuralPacketCount = 15;
         
         // Create data packets
-        for (let i = 0; i < maxPackets; i++) {
-            dataPackets.push(new DataPacket());
+        for (let i = 0; i < neuralPacketCount; i++) {
+            neuralDataPackets.push({
+                x: Math.random() * neuralCanvas.width,
+                y: Math.random() * neuralCanvas.height,
+                targetNode: Math.floor(Math.random() * neuralNodeCount),
+                progress: Math.random(),
+                speed: Math.random() * 0.005 + 0.002,
+                size: Math.random() * 3 + 2,
+                color: Math.random() > 0.5 ? '#00ffcc' : '#ff00ff'
+            });
         }
         
-        // Update data packets
-        function updateDataPackets() {
-            dataPackets.forEach(packet => packet.update());
-            requestAnimationFrame(updateDataPackets);
-        }
-        updateDataPackets();
-        
-        // Create defense wave
-        function createDefenseWave(x, y) {
-            const wave = document.createElement('div');
-            wave.className = 'defense-wave';
-            wave.style.left = (x - 25) + 'px';
-            wave.style.top = (y - 25) + 'px';
-            document.querySelector('.defense-background').appendChild(wave);
+        // Neural network animation loop
+        function animateNeuralNetwork() {
+            // Clear canvas with a semi-transparent black to create a trail effect
+            neuralCtx.fillStyle = 'rgba(10, 14, 26, 0.1)';
+            neuralCtx.fillRect(0, 0, neuralCanvas.width, neuralCanvas.height);
             
-            setTimeout(() => wave.remove(), 2000);
-        }
-        
-        // Create firewall particles
-        function createFirewallParticles(x, y, count = 15) {
-            for (let i = 0; i < count; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'firewall-particle';
+            // Update and draw nodes
+            neuralNodes.forEach((node, i) => {
+                // Update position
+                node.x += node.vx;
+                node.y += node.vy;
                 
-                // Position at the impact point
-                particle.style.left = x + 'px';
-                particle.style.top = y + 'px';
+                // Bounce off edges
+                if (node.x < 0 || node.x > neuralCanvas.width) node.vx *= -1;
+                if (node.y < 0 || node.y > neuralCanvas.height) node.vy *= -1;
                 
-                document.querySelector('.defense-background').appendChild(particle);
+                // Draw node
+                neuralCtx.beginPath();
+                neuralCtx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                neuralCtx.fillStyle = node.color;
+                neuralCtx.fill();
                 
-                // Animate particle
-                const angle = Math.random() * Math.PI * 2;
-                const speed = 1 + Math.random() * 3;
-                const lifetime = 500 + Math.random() * 1000;
-                
-                const startTime = Date.now();
-                
-                function animateParticle() {
-                    const elapsed = Date.now() - startTime;
-                    const progress = elapsed / lifetime;
+                // Draw connections
+                for (let j = i + 1; j < neuralNodes.length; j++) {
+                    const otherNode = neuralNodes[j];
+                    const dx = node.x - otherNode.x;
+                    const dy = node.y - otherNode.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
                     
-                    if (progress < 1) {
-                        const distance = speed * elapsed / 20;
-                        const currentX = x + Math.cos(angle) * distance;
-                        const currentY = y + Math.sin(angle) * distance;
-                        
-                        particle.style.left = currentX + 'px';
-                        particle.style.top = currentY + 'px';
-                        particle.style.opacity = 1 - progress;
-                        
-                        requestAnimationFrame(animateParticle);
-                    } else {
-                        particle.remove();
-                    }
-                }
-                
-                animateParticle();
-            }
-        }
-        
-        // Create encryption symbols
-        function createEncryptionSymbol() {
-            const symbols = ['⚛', '⚡', '⚕', '⚖', '⚗', '⚙', '⚚', '⚛', '⚜', '⚝'];
-            const symbol = document.createElement('div');
-            symbol.className = 'encryption-symbol';
-            symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-            symbol.style.left = Math.random() * window.innerWidth + 'px';
-            symbol.style.top = Math.random() * window.innerHeight + 'px';
-            
-            document.querySelector('.defense-background').appendChild(symbol);
-            
-            // Remove after animation
-            setTimeout(() => symbol.remove(), 10000);
-        }
-        
-        // Create encryption symbols periodically
-        setInterval(createEncryptionSymbol, 2000);
-        
-        // Mouse interaction
-        let mouseX = 0;
-        let mouseY = 0;
-        
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            // Create a small defense wave at mouse position occasionally
-            if (Math.random() > 0.9) {
-                createDefenseWave(mouseX, mouseY);
-            }
-        });
-        
-        // Periodically repair shield segments
-        setInterval(() => {
-            shieldSegments.forEach(segment => {
-                if (segment.health < 100) {
-                    segment.health = Math.min(100, segment.health + 5);
-                    
-                    // Update color based on health
-                    if (segment.health > 70) {
-                        segment.color = `rgba(0, 150, 255, 0.7)`;
-                    } else if (segment.health > 30) {
-                        segment.color = `rgba(255, 170, 0, 0.7)`;
-                    } else {
-                        segment.color = `rgba(255, 51, 102, 0.7)`;
+                    if (distance < neuralMaxDistance) {
+                        const opacity = 1 - distance / neuralMaxDistance;
+                        neuralCtx.beginPath();
+                        neuralCtx.moveTo(node.x, node.y);
+                        neuralCtx.lineTo(otherNode.x, otherNode.y);
+                        neuralCtx.strokeStyle = `rgba(0, 150, 255, ${opacity * 0.4})`;
+                        neuralCtx.lineWidth = 1;
+                        neuralCtx.stroke();
                     }
                 }
             });
-        }, 1000);
+            
+            // Update and draw data packets
+            neuralDataPackets.forEach(packet => {
+                const targetNode = neuralNodes[packet.targetNode];
+                
+                // Update progress
+                packet.progress += packet.speed;
+                if (packet.progress > 1) {
+                    packet.progress = 0;
+                    packet.targetNode = Math.floor(Math.random() * neuralNodeCount);
+                }
+                
+                // Calculate position along the path
+                packet.x = packet.x + (targetNode.x - packet.x) * packet.speed * 10;
+                packet.y = packet.y + (targetNode.y - packet.y) * packet.speed * 10;
+                
+                // Draw packet
+                neuralCtx.beginPath();
+                neuralCtx.arc(packet.x, packet.y, packet.size, 0, Math.PI * 2);
+                neuralCtx.fillStyle = packet.color;
+                neuralCtx.fill();
+                
+                // Draw glow
+                neuralCtx.beginPath();
+                neuralCtx.arc(packet.x, packet.y, packet.size * 2, 0, Math.PI * 2);
+                const gradient = neuralCtx.createRadialGradient(packet.x, packet.y, 0, packet.x, packet.y, packet.size * 2);
+                gradient.addColorStop(0, packet.color);
+                gradient.addColorStop(1, 'transparent');
+                neuralCtx.fillStyle = gradient;
+                neuralCtx.fill();
+            });
+            
+            requestAnimationFrame(animateNeuralNetwork);
+        }
+        
+        animateNeuralNetwork();
+        
+        // Why Security Section - Security Shields Animation
+        const shieldsCanvas = document.getElementById('shieldsCanvas');
+        const shieldsCtx = shieldsCanvas.getContext('2d');
+        
+        function resizeShieldsCanvas() {
+            const section = document.getElementById('about');
+            shieldsCanvas.width = section.offsetWidth;
+            shieldsCanvas.height = section.offsetHeight;
+        }
+        resizeShieldsCanvas();
+        window.addEventListener('resize', resizeShieldsCanvas);
+        
+        // Security shields
+        const shields = [];
+        const shieldCount = 15;
+        
+        // Create shields
+        for (let i = 0; i < shieldCount; i++) {
+            shields.push({
+                x: Math.random() * shieldsCanvas.width,
+                y: Math.random() * shieldsCanvas.height,
+                radius: Math.random() * 30 + 20,
+                rotation: Math.random() * Math.PI * 2,
+                rotationSpeed: (Math.random() - 0.5) * 0.01,
+                color: `rgba(16, 185, 129, ${Math.random() * 0.3 + 0.1})`,
+                pulsePhase: Math.random() * Math.PI * 2,
+                pulseSpeed: Math.random() * 0.02 + 0.01
+            });
+        }
+        
+        // Data icons to protect
+        const dataIcons = ['🔒', '💳', '📱', '💻', '🌐', '🔐', '💾', '📊', '🔑', '💼'];
+        const protectedData = [];
+        
+        // Create protected data
+        for (let i = 0; i < 20; i++) {
+            protectedData.push({
+                x: Math.random() * shieldsCanvas.width,
+                y: Math.random() * shieldsCanvas.height,
+                icon: dataIcons[Math.floor(Math.random() * dataIcons.length)],
+                size: Math.random() * 20 + 15,
+                protected: Math.random() > 0.3
+            });
+        }
+        
+        // Shields animation loop
+        function animateShields() {
+            // Clear canvas
+            shieldsCtx.clearRect(0, 0, shieldsCanvas.width, shieldsCanvas.height);
+            
+            // Update and draw shields
+            shields.forEach(shield => {
+                // Update rotation and pulse
+                shield.rotation += shield.rotationSpeed;
+                shield.pulsePhase += shield.pulseSpeed;
+                const pulseFactor = 1 + Math.sin(shield.pulsePhase) * 0.1;
+                
+                // Draw shield
+                shieldsCtx.save();
+                shieldsCtx.translate(shield.x, shield.y);
+                shieldsCtx.rotate(shield.rotation);
+                shieldsCtx.scale(pulseFactor, pulseFactor);
+                
+                // Shield shape
+                shieldsCtx.beginPath();
+                shieldsCtx.moveTo(0, -shield.radius);
+                shieldsCtx.bezierCurveTo(
+                    shield.radius, -shield.radius,
+                    shield.radius, shield.radius,
+                    0, shield.radius
+                );
+                shieldsCtx.bezierCurveTo(
+                    -shield.radius, shield.radius,
+                    -shield.radius, -shield.radius,
+                    0, -shield.radius
+                );
+                shieldsCtx.closePath();
+                
+                shieldsCtx.fillStyle = shield.color;
+                shieldsCtx.fill();
+                shieldsCtx.strokeStyle = 'rgba(16, 185, 129, 0.5)';
+                shieldsCtx.lineWidth = 2;
+                shieldsCtx.stroke();
+                
+                shieldsCtx.restore();
+            });
+            
+            // Draw protected data
+            protectedData.forEach(data => {
+                shieldsCtx.font = `${data.size}px Arial`;
+                shieldsCtx.textAlign = 'center';
+                shieldsCtx.textBaseline = 'middle';
+                
+                // Check if data is protected by any shield
+                let isProtected = data.protected;
+                if (!isProtected) {
+                    for (const shield of shields) {
+                        const dx = data.x - shield.x;
+                        const dy = data.y - shield.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < shield.radius) {
+                            isProtected = true;
+                            break;
+                        }
+                    }
+                }
+                
+                // Draw data with or without protection
+                if (isProtected) {
+                    shieldsCtx.fillStyle = 'rgba(16, 185, 129, 0.8)';
+                    shieldsCtx.shadowColor = 'rgba(16, 185, 129, 0.5)';
+                    shieldsCtx.shadowBlur = 10;
+                } else {
+                    shieldsCtx.fillStyle = 'rgba(239, 68, 68, 0.8)';
+                    shieldsCtx.shadowColor = 'rgba(239, 68, 68, 0.5)';
+                    shieldsCtx.shadowBlur = 10;
+                }
+                
+                shieldsCtx.fillText(data.icon, data.x, data.y);
+                shieldsCtx.shadowBlur = 0;
+            });
+            
+            requestAnimationFrame(animateShields);
+        }
+        
+        animateShields();
+        
+        // Experience Section - Company Logos Animation
+        const logosCanvas = document.getElementById('logosCanvas');
+        const logosCtx = logosCanvas.getContext('2d');
+        
+        function resizeLogosCanvas() {
+            const section = document.getElementById('experience');
+            logosCanvas.width = section.offsetWidth;
+            logosCanvas.height = section.offsetHeight;
+        }
+        resizeLogosCanvas();
+        window.addEventListener('resize', resizeLogosCanvas);
+        
+        // Company logos (simplified as circles with text)
+        const companies = [
+            'Google', 'Meta', 'TikTok', 'Skype', 'PUBG', 'FreeFire', 'MPL', 'ShareChat', 'Moj', 'Tango', 'Pococha', 'Tiki', 'Zilli', 'Trendo', 'Poppo', 'Zomato', 'Zepto', 'Rapido', 'WazirX', 'Paytm'
+        ];
+        
+        const logoParticles = [];
+        const logoParticleCount = 100;
+        
+        // Create logo particles
+        for (let i = 0; i < logoParticleCount; i++) {
+            const company = companies[Math.floor(Math.random() * companies.length)];
+            logoParticles.push({
+                x: Math.random() * logosCanvas.width,
+                y: Math.random() * logosCanvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                radius: Math.random() * 15 + 10,
+                company: company,
+                color: `hsla(${Math.random() * 60 + 180}, 70%, 60%, ${Math.random() * 0.5 + 0.3})`,
+                connections: []
+            });
+        }
+        
+        // Logos animation loop
+        function animateLogos() {
+            // Clear canvas with a semi-transparent background
+            logosCtx.fillStyle = 'rgba(15, 23, 42, 0.1)';
+            logosCtx.fillRect(0, 0, logosCanvas.width, logosCanvas.height);
+            
+            // Update and draw logo particles
+            logoParticles.forEach((particle, i) => {
+                // Update position
+                particle.x += particle.vx;
+                particle.y += particle.vy;
+                
+                // Bounce off edges
+                if (particle.x < particle.radius || particle.x > logosCanvas.width - particle.radius) {
+                    particle.vx *= -1;
+                }
+                if (particle.y < particle.radius || particle.y > logosCanvas.height - particle.radius) {
+                    particle.vy *= -1;
+                }
+                
+                // Draw particle
+                logosCtx.beginPath();
+                logosCtx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+                logosCtx.fillStyle = particle.color;
+                logosCtx.fill();
+                
+                // Draw company name
+                logosCtx.font = '10px Arial';
+                logosCtx.textAlign = 'center';
+                logosCtx.textBaseline = 'middle';
+                logosCtx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                logosCtx.fillText(particle.company, particle.x, particle.y);
+                
+                // Find nearby particles and connect them
+                particle.connections = [];
+                for (let j = i + 1; j < logoParticles.length; j++) {
+                    const otherParticle = logoParticles[j];
+                    const dx = particle.x - otherParticle.x;
+                    const dy = particle.y - otherParticle.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 100) {
+                        particle.connections.push(j);
+                        
+                        const opacity = 1 - distance / 100;
+                        logosCtx.beginPath();
+                        logosCtx.moveTo(particle.x, particle.y);
+                        logosCtx.lineTo(otherParticle.x, otherParticle.y);
+                        logosCtx.strokeStyle = `rgba(16, 185, 129, ${opacity * 0.3})`;
+                        logosCtx.lineWidth = 1;
+                        logosCtx.stroke();
+                    }
+                }
+            });
+            
+            requestAnimationFrame(animateLogos);
+        }
+        
+        animateLogos();
+        
+        // Journey Section - Path Animation
+        const journeyCanvas = document.getElementById('journeyCanvas');
+        const journeyCtx = journeyCanvas.getContext('2d');
+        
+        function resizeJourneyCanvas() {
+            const section = document.getElementById('journey');
+            journeyCanvas.width = section.offsetWidth;
+            journeyCanvas.height = section.offsetHeight;
+        }
+        resizeJourneyCanvas();
+        window.addEventListener('resize', resizeJourneyCanvas);
+        
+        // Journey path
+        const journeyPath = [];
+        const journeyPoints = 50;
+        
+        // Create journey path
+        for (let i = 0; i < journeyPoints; i++) {
+            journeyPath.push({
+                x: (i / (journeyPoints - 1)) * journeyCanvas.width,
+                y: journeyCanvas.height / 2 + Math.sin(i / 5) * 50,
+                radius: Math.random() * 5 + 3,
+                color: `hsla(${i / journeyPoints * 120 + 180}, 70%, 60%, 0.7)`
+            });
+        }
+        
+        // Traveler
+        const traveler = {
+            position: 0,
+            size: 15,
+            color: '#10b981',
+            trail: []
+        };
+        
+        // Journey animation loop
+        function animateJourney() {
+            // Clear canvas
+            journeyCtx.clearRect(0, 0, journeyCanvas.width, journeyCanvas.height);
+            
+            // Draw path
+            journeyCtx.beginPath();
+            journeyCtx.moveTo(journeyPath[0].x, journeyPath[0].y);
+            
+            for (let i = 1; i < journeyPath.length; i++) {
+                journeyCtx.lineTo(journeyPath[i].x, journeyPath[i].y);
+            }
+            
+            journeyCtx.strokeStyle = 'rgba(16, 185, 129, 0.3)';
+            journeyCtx.lineWidth = 3;
+            journeyCtx.stroke();
+            
+            // Draw path points
+            journeyPath.forEach((point, i) => {
+                journeyCtx.beginPath();
+                journeyCtx.arc(point.x, point.y, point.radius, 0, Math.PI * 2);
+                journeyCtx.fillStyle = point.color;
+                journeyCtx.fill();
+            });
+            
+            // Update traveler position
+            traveler.position += 0.002;
+            if (traveler.position > 1) traveler.position = 0;
+            
+            // Calculate traveler position on path
+            const pathIndex = Math.floor(traveler.position * (journeyPath.length - 1));
+            const pathProgress = (traveler.position * (journeyPath.length - 1)) - pathIndex;
+            
+            const currentPoint = journeyPath[pathIndex];
+            const nextPoint = journeyPath[Math.min(pathIndex + 1, journeyPath.length - 1)];
+            
+            const travelerX = currentPoint.x + (nextPoint.x - currentPoint.x) * pathProgress;
+            const travelerY = currentPoint.y + (nextPoint.y - currentPoint.y) * pathProgress;
+            
+            // Add to trail
+            traveler.trail.push({ x: travelerX, y: travelerY });
+            if (traveler.trail.length > 20) traveler.trail.shift();
+            
+            // Draw trail
+            traveler.trail.forEach((point, i) => {
+                const opacity = i / traveler.trail.length;
+                journeyCtx.beginPath();
+                journeyCtx.arc(point.x, point.y, traveler.size * opacity, 0, Math.PI * 2);
+                journeyCtx.fillStyle = `rgba(16, 185, 129, ${opacity * 0.7})`;
+                journeyCtx.fill();
+            });
+            
+            // Draw traveler
+            journeyCtx.beginPath();
+            journeyCtx.arc(travelerX, travelerY, traveler.size, 0, Math.PI * 2);
+            journeyCtx.fillStyle = traveler.color;
+            journeyCtx.fill();
+            
+            // Draw glow
+            journeyCtx.beginPath();
+            journeyCtx.arc(travelerX, travelerY, traveler.size * 2, 0, Math.PI * 2);
+            const gradient = journeyCtx.createRadialGradient(travelerX, travelerY, 0, travelerX, travelerY, traveler.size * 2);
+            gradient.addColorStop(0, traveler.color);
+            gradient.addColorStop(1, 'transparent');
+            journeyCtx.fillStyle = gradient;
+            journeyCtx.fill();
+            
+            requestAnimationFrame(animateJourney);
+        }
+        
+        animateJourney();
+        
+        // Case Study Section - Google Logo Protection Animation
+        const caseStudyCanvas = document.getElementById('caseStudyCanvas');
+        const caseStudyCtx = caseStudyCanvas.getContext('2d');
+        
+        function resizeCaseStudyCanvas() {
+            const section = document.getElementById('case-study');
+            caseStudyCanvas.width = section.offsetWidth;
+            caseStudyCanvas.height = section.offsetHeight;
+        }
+        resizeCaseStudyCanvas();
+        window.addEventListener('resize', resizeCaseStudyCanvas);
+        
+        // Google logo
+        const googleLogo = {
+            x: caseStudyCanvas.width / 2,
+            y: caseStudyCanvas.height / 2,
+            size: 80,
+            color: '#4285F4',
+            protected: true
+        };
+        
+        // Threats
+        const threats = [];
+        const threatCount = 15;
+        
+        // Create threats
+        for (let i = 0; i < threatCount; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const distance = Math.random() * 200 + 100;
+            
+            threats.push({
+                x: googleLogo.x + Math.cos(angle) * distance,
+                y: googleLogo.y + Math.sin(angle) * distance,
+                vx: (Math.random() - 0.5) * 2,
+                vy: (Math.random() - 0.5) * 2,
+                size: Math.random() * 10 + 5,
+                color: '#ef4444',
+                active: Math.random() > 0.5
+            });
+        }
+        
+        // Shields
+        const shieldsCount = 8;
+        const shieldsArray = [];
+        
+        // Create shields
+        for (let i = 0; i < shieldsCount; i++) {
+            const angle = (i / shieldsCount) * Math.PI * 2;
+            shieldsArray.push({
+                angle: angle,
+                distance: googleLogo.size + 30,
+                width: 20,
+                height: 60,
+                color: 'rgba(16, 185, 129, 0.7)',
+                active: true
+            });
+        }
+        
+        // Case study animation loop
+        function animateCaseStudy() {
+            // Clear canvas
+            caseStudyCtx.clearRect(0, 0, caseStudyCanvas.width, caseStudyCanvas.height);
+            
+            // Draw Google logo
+            caseStudyCtx.font = 'bold 80px Arial';
+            caseStudyCtx.textAlign = 'center';
+            caseStudyCtx.textBaseline = 'middle';
+            caseStudyCtx.fillStyle = googleLogo.color;
+            caseStudyCtx.fillText('G', googleLogo.x - 60, googleLogo.y);
+            caseStudyCtx.fillStyle = '#EA4335';
+            caseStudyCtx.fillText('o', googleLogo.x - 20, googleLogo.y);
+            caseStudyCtx.fillStyle = '#FBBC05';
+            caseStudyCtx.fillText('o', googleLogo.x + 20, googleLogo.y);
+            caseStudyCtx.fillStyle = '#4285F4';
+            caseStudyCtx.fillText('g', googleLogo.x + 60, googleLogo.y);
+            caseStudyCtx.fillStyle = '#34A853';
+            caseStudyCtx.fillText('l', googleLogo.x + 100, googleLogo.y);
+            caseStudyCtx.fillStyle = '#EA4335';
+            caseStudyCtx.fillText('e', googleLogo.x + 140, googleLogo.y);
+            
+            // Update and draw shields
+            shieldsArray.forEach(shield => {
+                // Calculate shield position
+                const shieldX = googleLogo.x + Math.cos(shield.angle) * shield.distance;
+                const shieldY = googleLogo.y + Math.sin(shield.angle) * shield.distance;
+                
+                // Draw shield
+                caseStudyCtx.save();
+                caseStudyCtx.translate(shieldX, shieldY);
+                caseStudyCtx.rotate(shield.angle);
+                
+                caseStudyCtx.fillStyle = shield.color;
+                caseStudyCtx.fillRect(-shield.width/2, -shield.height/2, shield.width, shield.height);
+                
+                caseStudyCtx.restore();
+            });
+            
+            // Update and draw threats
+            threats.forEach(threat => {
+                if (!threat.active) return;
+                
+                // Update position
+                threat.x += threat.vx;
+                threat.y += threat.vy;
+                
+                // Check if threat is blocked by shield
+                let blocked = false;
+                for (const shield of shieldsArray) {
+                    if (!shield.active) continue;
+                    
+                    const shieldX = googleLogo.x + Math.cos(shield.angle) * shield.distance;
+                    const shieldY = googleLogo.y + Math.sin(shield.angle) * shield.distance;
+                    
+                    // Simple collision detection
+                    const dx = threat.x - shieldX;
+                    const dy = threat.y - shieldY;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 30) {
+                        blocked = true;
+                        threat.active = false;
+                        break;
+                    }
+                }
+                
+                // Check if threat reached the logo
+                if (!blocked) {
+                    const dx = threat.x - googleLogo.x;
+                    const dy = threat.y - googleLogo.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < googleLogo.size) {
+                        threat.active = false;
+                        googleLogo.protected = false;
+                        
+                        // Reset after a delay
+                        setTimeout(() => {
+                            threat.active = true;
+                            threat.x = googleLogo.x + Math.cos(Math.random() * Math.PI * 2) * 300;
+                            threat.y = googleLogo.y + Math.sin(Math.random() * Math.PI * 2) * 300;
+                            googleLogo.protected = true;
+                        }, 2000);
+                    }
+                }
+                
+                // Draw threat
+                if (threat.active) {
+                    caseStudyCtx.beginPath();
+                    caseStudyCtx.arc(threat.x, threat.y, threat.size, 0, Math.PI * 2);
+                    caseStudyCtx.fillStyle = threat.color;
+                    caseStudyCtx.fill();
+                    
+                    // Draw danger symbol
+                    caseStudyCtx.font = 'bold 12px Arial';
+                    caseStudyCtx.textAlign = 'center';
+                    caseStudyCtx.textBaseline = 'middle';
+                    caseStudyCtx.fillStyle = 'white';
+                    caseStudyCtx.fillText('!', threat.x, threat.y);
+                }
+            });
+            
+            // Draw protection status
+            if (googleLogo.protected) {
+                caseStudyCtx.beginPath();
+                caseStudyCtx.arc(googleLogo.x, googleLogo.y, googleLogo.size + 20, 0, Math.PI * 2);
+                caseStudyCtx.strokeStyle = 'rgba(16, 185, 129, 0.5)';
+                caseStudyCtx.lineWidth = 3;
+                caseStudyCtx.stroke();
+            }
+            
+            requestAnimationFrame(animateCaseStudy);
+        }
+        
+        animateCaseStudy();
+        
+        // Vulnerabilities Section - Locks Animation
+        const vulnerabilitiesCanvas = document.getElementById('vulnerabilitiesCanvas');
+        const vulnerabilitiesCtx = vulnerabilitiesCanvas.getContext('2d');
+        
+        function resizeVulnerabilitiesCanvas() {
+            const section = document.getElementById('vulnerabilities');
+            vulnerabilitiesCanvas.width = section.offsetWidth;
+            vulnerabilitiesCanvas.height = section.offsetHeight;
+        }
+        resizeVulnerabilitiesCanvas();
+        window.addEventListener('resize', resizeVulnerabilitiesCanvas);
+        
+        // Locks
+        const locks = [];
+        const lockCount = 12;
+        
+        // Create locks
+        for (let i = 0; i < lockCount; i++) {
+            locks.push({
+                x: Math.random() * vulnerabilitiesCanvas.width,
+                y: Math.random() * vulnerabilitiesCanvas.height,
+                size: Math.random() * 30 + 20,
+                locked: Math.random() > 0.5,
+                lockType: Math.floor(Math.random() * 4), // 0: Account Takeover, 1: Coin Crediting, 2: Bulk Account Creation, 3: Payment Bypass
+                rotation: Math.random() * Math.PI * 2,
+                rotationSpeed: (Math.random() - 0.5) * 0.01,
+                color: Math.random() > 0.5 ? '#ef4444' : '#f59e0b'
+            });
+        }
+        
+        // Hackers
+        const hackers = [];
+        const hackerCount = 5;
+        
+        // Create hackers
+        for (let i = 0; i < hackerCount; i++) {
+            hackers.push({
+                x: Math.random() * vulnerabilitiesCanvas.width,
+                y: Math.random() * vulnerabilitiesCanvas.height,
+                vx: (Math.random() - 0.5) * 1,
+                vy: (Math.random() - 0.5) * 1,
+                targetLock: Math.floor(Math.random() * lockCount),
+                progress: 0,
+                speed: Math.random() * 0.005 + 0.002,
+                size: 10,
+                color: '#8b5cf6'
+            });
+        }
+        
+        // Vulnerabilities animation loop
+        function animateVulnerabilities() {
+            // Clear canvas
+            vulnerabilitiesCtx.clearRect(0, 0, vulnerabilitiesCanvas.width, vulnerabilitiesCanvas.height);
+            
+            // Update and draw locks
+            locks.forEach(lock => {
+                // Update rotation
+                lock.rotation += lock.rotationSpeed;
+                
+                // Draw lock
+                vulnerabilitiesCtx.save();
+                vulnerabilitiesCtx.translate(lock.x, lock.y);
+                vulnerabilitiesCtx.rotate(lock.rotation);
+                
+                // Lock body
+                vulnerabilitiesCtx.fillStyle = lock.locked ? '#64748b' : '#10b981';
+                vulnerabilitiesCtx.fillRect(-lock.size/2, -lock.size/4, lock.size, lock.size/2);
+                
+                // Lock shackle
+                vulnerabilitiesCtx.beginPath();
+                vulnerabilitiesCtx.arc(0, -lock.size/4, lock.size/3, Math.PI, 0, false);
+                vulnerabilitiesCtx.strokeStyle = lock.locked ? '#64748b' : '#10b981';
+                vulnerabilitiesCtx.lineWidth = 4;
+                vulnerabilitiesCtx.stroke();
+                
+                // Keyhole
+                vulnerabilitiesCtx.beginPath();
+                vulnerabilitiesCtx.arc(0, 0, lock.size/6, 0, Math.PI * 2);
+                vulnerabilitiesCtx.fillStyle = '#1e293b';
+                vulnerabilitiesCtx.fill();
+                
+                vulnerabilitiesCtx.restore();
+                
+                // Draw lock type indicator
+                let typeText = '';
+                let typeColor = '';
+                
+                switch(lock.lockType) {
+                    case 0:
+                        typeText = 'ID';
+                        typeColor = '#ef4444';
+                        break;
+                    case 1:
+                        typeText = '$';
+                        typeColor = '#f59e0b';
+                        break;
+                    case 2:
+                        typeText = '++';
+                        typeColor = '#3b82f6';
+                        break;
+                    case 3:
+                        typeText = '💳';
+                        typeColor = '#10b981';
+                        break;
+                }
+                
+                vulnerabilitiesCtx.font = 'bold 12px Arial';
+                vulnerabilitiesCtx.textAlign = 'center';
+                vulnerabilitiesCtx.textBaseline = 'middle';
+                vulnerabilitiesCtx.fillStyle = typeColor;
+                vulnerabilitiesCtx.fillText(typeText, lock.x, lock.y + lock.size);
+            });
+            
+            // Update and draw hackers
+            hackers.forEach(hacker => {
+                const targetLock = locks[hacker.targetLock];
+                
+                // Update progress
+                hacker.progress += hacker.speed;
+                if (hacker.progress > 1) {
+                    hacker.progress = 0;
+                    hacker.targetLock = Math.floor(Math.random() * lockCount);
+                }
+                
+                // Calculate position
+                hacker.x = hacker.x + (targetLock.x - hacker.x) * hacker.speed * 10;
+                hacker.y = hacker.y + (targetLock.y - hacker.y) * hacker.speed * 10;
+                
+                // Draw hacker
+                vulnerabilitiesCtx.beginPath();
+                vulnerabilitiesCtx.arc(hacker.x, hacker.y, hacker.size, 0, Math.PI * 2);
+                vulnerabilitiesCtx.fillStyle = hacker.color;
+                vulnerabilitiesCtx.fill();
+                
+                // Draw hacker icon
+                vulnerabilitiesCtx.font = 'bold 12px Arial';
+                vulnerabilitiesCtx.textAlign = 'center';
+                vulnerabilitiesCtx.textBaseline = 'middle';
+                vulnerabilitiesCtx.fillStyle = 'white';
+                vulnerabilitiesCtx.fillText('👨‍💻', hacker.x, hacker.y);
+                
+                // Check if hacker reached the lock
+                const dx = hacker.x - targetLock.x;
+                const dy = hacker.y - targetLock.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < targetLock.size && targetLock.locked) {
+                    // Unlock the lock
+                    targetLock.locked = false;
+                    
+                    // Create explosion effect
+                    for (let i = 0; i < 10; i++) {
+                        const angle = Math.random() * Math.PI * 2;
+                        const speed = Math.random() * 3 + 1;
+                        
+                        // Draw particle
+                        vulnerabilitiesCtx.beginPath();
+                        vulnerabilitiesCtx.arc(targetLock.x, targetLock.y, 2, 0, Math.PI * 2);
+                        vulnerabilitiesCtx.fillStyle = '#f59e0b';
+                        vulnerabilitiesCtx.fill();
+                    }
+                    
+                    // Relock after a delay
+                    setTimeout(() => {
+                        targetLock.locked = true;
+                    }, 3000);
+                }
+            });
+            
+            requestAnimationFrame(animateVulnerabilities);
+        }
+        
+        animateVulnerabilities();
+        
+        // Services Section - Service Icons Animation
+        const servicesCanvas = document.getElementById('servicesCanvas');
+        const servicesCtx = servicesCanvas.getContext('2d');
+        
+        function resizeServicesCanvas() {
+            const section = document.getElementById('services');
+            servicesCanvas.width = section.offsetWidth;
+            servicesCanvas.height = section.offsetHeight;
+        }
+        resizeServicesCanvas();
+        window.addEventListener('resize', resizeServicesCanvas);
+        
+        // Service icons
+        const serviceIcons = [
+            { icon: '🌐', color: '#3b82f6', name: 'Web' },
+            { icon: '📱', color: '#8b5cf6', name: 'Mobile' },
+            { icon: '🔌', color: '#10b981', name: 'API' },
+            { icon: '🔍', color: '#f59e0b', name: 'Testing' },
+            { icon: '📊', color: '#ef4444', name: 'Reports' },
+            { icon: '🔄', color: '#06b6d4', name: 'Annual' }
+        ];
+        
+        // Service particles
+        const serviceParticles = [];
+        const serviceParticleCount = 80;
+        
+        // Create service particles
+        for (let i = 0; i < serviceParticleCount; i++) {
+            const service = serviceIcons[Math.floor(Math.random() * serviceIcons.length)];
+            serviceParticles.push({
+                x: Math.random() * servicesCanvas.width,
+                y: Math.random() * servicesCanvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                size: Math.random() * 20 + 15,
+                icon: service.icon,
+                color: service.color,
+                name: service.name,
+                alpha: Math.random() * 0.5 + 0.3
+            });
+        }
+        
+        // Services animation loop
+        function animateServices() {
+            // Clear canvas with a semi-transparent background
+            servicesCtx.fillStyle = 'rgba(241, 245, 249, 0.1)';
+            servicesCtx.fillRect(0, 0, servicesCanvas.width, servicesCanvas.height);
+            
+            // Update and draw service particles
+            serviceParticles.forEach(particle => {
+                // Update position
+                particle.x += particle.vx;
+                particle.y += particle.vy;
+                
+                // Bounce off edges
+                if (particle.x < particle.size || particle.x > servicesCanvas.width - particle.size) {
+                    particle.vx *= -1;
+                }
+                if (particle.y < particle.size || particle.y > servicesCanvas.height - particle.size) {
+                    particle.vy *= -1;
+                }
+                
+                // Draw particle
+                servicesCtx.font = `${particle.size}px Arial`;
+                servicesCtx.textAlign = 'center';
+                servicesCtx.textBaseline = 'middle';
+                servicesCtx.globalAlpha = particle.alpha;
+                servicesCtx.fillText(particle.icon, particle.x, particle.y);
+                servicesCtx.globalAlpha = 1;
+                
+                // Draw glow
+                servicesCtx.beginPath();
+                servicesCtx.arc(particle.x, particle.y, particle.size * 1.5, 0, Math.PI * 2);
+                const gradient = servicesCtx.createRadialGradient(particle.x, particle.y, 0, particle.x, particle.y, particle.size * 1.5);
+                gradient.addColorStop(0, particle.color);
+                gradient.addColorStop(1, 'transparent');
+                servicesCtx.fillStyle = gradient;
+                servicesCtx.globalAlpha = particle.alpha * 0.3;
+                servicesCtx.fill();
+                servicesCtx.globalAlpha = 1;
+            });
+            
+            // Draw connections between similar services
+            for (let i = 0; i < serviceParticles.length; i++) {
+                for (let j = i + 1; j < serviceParticles.length; j++) {
+                    const particle1 = serviceParticles[i];
+                    const particle2 = serviceParticles[j];
+                    
+                    if (particle1.name === particle2.name) {
+                        const dx = particle1.x - particle2.x;
+                        const dy = particle1.y - particle2.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 150) {
+                            const opacity = (1 - distance / 150) * 0.3;
+                            servicesCtx.beginPath();
+                            servicesCtx.moveTo(particle1.x, particle1.y);
+                            servicesCtx.lineTo(particle2.x, particle2.y);
+                            servicesCtx.strokeStyle = particle1.color;
+                            servicesCtx.globalAlpha = opacity;
+                            servicesCtx.lineWidth = 1;
+                            servicesCtx.stroke();
+                            servicesCtx.globalAlpha = 1;
+                        }
+                    }
+                }
+            }
+            
+            requestAnimationFrame(animateServices);
+        }
+        
+        animateServices();
+        
+        // Contact Section - Secure Connection Animation
+        const contactCanvas = document.getElementById('contactCanvas');
+        const contactCtx = contactCanvas.getContext('2d');
+        
+        function resizeContactCanvas() {
+            const section = document.getElementById('contact');
+            contactCanvas.width = section.offsetWidth;
+            contactCanvas.height = section.offsetHeight;
+        }
+        resizeContactCanvas();
+        window.addEventListener('resize', resizeContactCanvas);
+        
+        // Connection nodes
+        const connectionNodes = [];
+        const nodeCount = 8;
+        
+        // Create connection nodes
+        for (let i = 0; i < nodeCount; i++) {
+            const angle = (i / nodeCount) * Math.PI * 2;
+            const radius = Math.min(contactCanvas.width, contactCanvas.height) * 0.3;
+            
+            connectionNodes.push({
+                x: contactCanvas.width / 2 + Math.cos(angle) * radius,
+                y: contactCanvas.height / 2 + Math.sin(angle) * radius,
+                radius: 15,
+                color: '#10b981',
+                pulsePhase: Math.random() * Math.PI * 2
+            });
+        }
+        
+        // Data packets
+        const connectionPackets = [];
+        const connectionPacketCount = 20;
+        
+        // Create data packets
+        for (let i = 0; i < connectionPacketCount; i++) {
+            const startNode = Math.floor(Math.random() * nodeCount);
+            const endNode = Math.floor(Math.random() * nodeCount);
+            
+            connectionPackets.push({
+                startNode: startNode,
+                endNode: endNode,
+                progress: Math.random(),
+                speed: Math.random() * 0.01 + 0.005,
+                size: 6,
+                color: Math.random() > 0.5 ? '#00ffcc' : '#8b5cf6',
+                active: Math.random() > 0.3
+            });
+        }
+        
+        // Contact animation loop
+        function animateContact() {
+            // Clear canvas
+            contactCtx.clearRect(0, 0, contactCanvas.width, contactCanvas.height);
+            
+            // Draw center node
+            contactCtx.beginPath();
+            contactCtx.arc(contactCanvas.width / 2, contactCanvas.height / 2, 20, 0, Math.PI * 2);
+            contactCtx.fillStyle = '#1e3a8a';
+            contactCtx.fill();
+            
+            contactCtx.beginPath();
+            contactCtx.arc(contactCanvas.width / 2, contactCanvas.height / 2, 25, 0, Math.PI * 2);
+            contactCtx.strokeStyle = '#10b981';
+            contactCtx.lineWidth = 2;
+            contactCtx.stroke();
+            
+            // Update and draw connection nodes
+            connectionNodes.forEach(node => {
+                // Update pulse phase
+                node.pulsePhase += 0.05;
+                const pulseFactor = 1 + Math.sin(node.pulsePhase) * 0.2;
+                
+                // Draw node
+                contactCtx.beginPath();
+                contactCtx.arc(node.x, node.y, node.radius * pulseFactor, 0, Math.PI * 2);
+                contactCtx.fillStyle = node.color;
+                contactCtx.fill();
+                
+                // Draw connection to center
+                contactCtx.beginPath();
+                contactCtx.moveTo(node.x, node.y);
+                contactCtx.lineTo(contactCanvas.width / 2, contactCanvas.height / 2);
+                contactCtx.strokeStyle = 'rgba(16, 185, 129, 0.3)';
+                contactCtx.lineWidth = 1;
+                contactCtx.stroke();
+            });
+            
+            // Update and draw data packets
+            connectionPackets.forEach(packet => {
+                if (!packet.active) return;
+                
+                // Update progress
+                packet.progress += packet.speed;
+                if (packet.progress > 1) {
+                    packet.progress = 0;
+                    
+                    // Randomly change direction
+                    if (Math.random() > 0.7) {
+                        packet.startNode = packet.endNode;
+                        packet.endNode = Math.floor(Math.random() * nodeCount);
+                    }
+                }
+                
+                // Calculate position
+                const startNode = connectionNodes[packet.startNode];
+                const endNode = connectionNodes[packet.endNode];
+                
+                const packetX = startNode.x + (endNode.x - startNode.x) * packet.progress;
+                const packetY = startNode.y + (endNode.y - startNode.y) * packet.progress;
+                
+                // Draw packet
+                contactCtx.beginPath();
+                contactCtx.arc(packetX, packetY, packet.size, 0, Math.PI * 2);
+                contactCtx.fillStyle = packet.color;
+                contactCtx.fill();
+                
+                // Draw glow
+                contactCtx.beginPath();
+                contactCtx.arc(packetX, packetY, packet.size * 2, 0, Math.PI * 2);
+                const gradient = contactCtx.createRadialGradient(packetX, packetY, 0, packetX, packetY, packet.size * 2);
+                gradient.addColorStop(0, packet.color);
+                gradient.addColorStop(1, 'transparent');
+                contactCtx.fillStyle = gradient;
+                contactCtx.fill();
+            });
+            
+            requestAnimationFrame(animateContact);
+        }
+        
+        animateContact();
     </script>
     </script>
     </main>
 </body>
-
 </html>

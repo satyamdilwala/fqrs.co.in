@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Circuit Animated Background</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            background: #000;
+        }
+
+        .circuit-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0a1a 0%, #000 100%);
+            z-index: -1;
+        }
+
+        /* Circuit board lines */
+        .circuit-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+        }
+
+        /* Circuit nodes */
+        .circuit-node {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #00ffff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ffff;
+            z-index: 2;
+        }
+
+        /* Active circuit node */
+        .circuit-node.active {
+            animation: nodePulse 2s infinite;
+        }
+
+        @keyframes nodePulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.7; }
+        }
+
+        /* Circuit paths */
+        .circuit-path {
+            position: absolute;
+            background: #00ffff;
+            z-index: 1;
+            box-shadow: 0 0 5px #00ffff;
+        }
+
+        .circuit-path.horizontal {
+            height: 2px;
+        }
+
+        .circuit-path.vertical {
+            width: 2px;
+        }
+
+        /* Data flow animation */
+        .data-flow {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #ff00ff;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #ff00ff;
+            z-index: 3;
+        }
+
+        /* Binary rain */
+        .binary-rain {
+            position: absolute;
+            color: rgba(0, 255, 255, 0.7);
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            font-weight: bold;
+            z-index: 1;
+            text-shadow: 0 0 5px #00ffff;
+            animation: binaryFall linear infinite;
+        }
+
+        @keyframes binaryFall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Hex code elements */
+        .hex-element {
+            position: absolute;
+            color: rgba(255, 0, 255, 0.5);
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            z-index: 1;
+            text-shadow: 0 0 5px #ff00ff;
+            animation: hexFloat 15s linear infinite;
+        }
+
+        @keyframes hexFloat {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            100% { transform: translateY(-100px) translateX(50px); opacity: 0; }
+        }
+
+        /* Grid overlay */
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 0;
+        }
+
+        /* Glitch effect */
+        .glitch-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 255, 255, 0.05);
+            opacity: 0;
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        .glitch-active {
+            animation: glitch 0.3s ease-out;
+        }
+
+        @keyframes glitch {
+            0% { opacity: 0; transform: translateX(0); }
+            20% { opacity: 0.5; transform: translateX(-5px); }
+            40% { opacity: 0.5; transform: translateX(5px); }
+            60% { opacity: 0.5; transform: translateX(-3px); }
+            80% { opacity: 0.5; transform: translateX(3px); }
+            100% { opacity: 0; transform: translateX(0); }
+        }
+
+        /* Scan lines */
+        .scan-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 255, 255, 0.03) 2px,
+                rgba(0, 255, 255, 0.03) 4px
+            );
+            z-index: 3;
+            animation: scan 8s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="circuit-background">
+        <!-- Grid overlay -->
+        <div class="grid-overlay"></div>
+        
+        <!-- Circuit lines container -->
+        <div class="circuit-lines" id="circuitLines"></div>
+        
+        <!-- Scan lines -->
+        <div class="scan-lines"></div>
+        
+        <!-- Glitch effect -->
+        <div class="glitch-effect" id="glitchEffect"></div>
+    </div>
+
+    <script>
+        // Circuit board generation
+        const circuitContainer = document.getElementById('circuitLines');
+        const nodes = [];
+        const paths = [];
+        const dataFlows = [];
+        
+        // Create circuit nodes
+        function createNodes() {
+            const rows = 8;
+            const cols = 12;
+            const spacingX = window.innerWidth / (cols + 1);
+            const spacingY = window.innerHeight / (rows + 1);
+            
+            for (let row = 0; row < rows; row++) {
+                for (let col = 0; col < cols; col++) {
+                    // Skip some nodes randomly to create a more organic look
+                    if (Math.random() > 0.3) {
+                        const node = document.createElement('div');
+                        node.className = 'circuit-node';
+                        
+                        // Position the node
+                        const x = (col + 1) * spacingX;
+                        const y = (row + 1) * spacingY;
+                        
+                        node.style.left = x + 'px';
+                        node.style.top = y + 'px';
+                        
+                        // Make some nodes active
+                        if (Math.random() > 0.7) {
+                            node.classList.add('active');
+                        }
+                        
+                        circuitContainer.appendChild(node);
+                        nodes.push({ element: node, x, y, row, col });
+                    }
+                }
+            }
+        }
+        
+        // Create circuit paths between nodes
+        function createPaths() {
+            // Sort nodes by position
+            const sortedByRow = [...nodes].sort((a, b) => a.row - b.row || a.col - b.col);
+            
+            // Create horizontal paths
+            for (let i = 0; i < sortedByRow.length - 1; i++) {
+                const current = sortedByRow[i];
+                const next = sortedByRow[i + 1];
+                
+                // Connect nodes in the same row
+                if (current.row === next.row && Math.random() > 0.4) {
+                    createPath(current.x, current.y, next.x, next.y, 'horizontal');
+                }
+            }
+            
+            // Create vertical paths
+            const sortedByCol = [...nodes].sort((a, b) => a.col - b.col || a.row - b.row);
+            
+            for (let i = 0; i < sortedByCol.length - 1; i++) {
+                const current = sortedByCol[i];
+                const next = sortedByCol[i + 1];
+                
+                // Connect nodes in the same column
+                if (current.col === next.col && Math.random() > 0.4) {
+                    createPath(current.x, current.y, next.x, next.y, 'vertical');
+                }
+            }
+            
+            // Create some random diagonal connections
+            for (let i = 0; i < nodes.length; i++) {
+                const current = nodes[i];
+                
+                // Find a random node to connect to
+                const possibleTargets = nodes.filter(node => 
+                    node !== current && 
+                    Math.abs(node.row - current.row) <= 2 && 
+                    Math.abs(node.col - current.col) <= 2
+                );
+                
+                if (possibleTargets.length > 0 && Math.random() > 0.7) {
+                    const target = possibleTargets[Math.floor(Math.random() * possibleTargets.length)];
+                    createPath(current.x, current.y, target.x, target.y, 'diagonal');
+                }
+            }
+        }
+        
+        // Create a path between two points
+        function createPath(x1, y1, x2, y2, type) {
+            // For diagonal paths, we'll create an L-shaped path (horizontal + vertical)
+            if (type === 'diagonal') {
+                // Randomly decide the direction of the L-shape
+                if (Math.random() > 0.5) {
+                    // Horizontal then vertical
+                    createPath(x1, y1, x2, y1, 'horizontal');
+                    createPath(x2, y1, x2, y2, 'vertical');
+                } else {
+                    // Vertical then horizontal
+                    createPath(x1, y1, x1, y2, 'vertical');
+                    createPath(x1, y2, x2, y2, 'horizontal');
+                }
+                return;
+            }
+            
+            const path = document.createElement('div');
+            path.className = `circuit-path ${type}`;
+            
+            if (type === 'horizontal') {
+                const width = Math.abs(x2 - x1);
+                path.style.width = width + 'px';
+                path.style.left = Math.min(x1, x2) + 'px';
+                path.style.top = y1 + 'px';
+            } else if (type === 'vertical') {
+                const height = Math.abs(y2 - y1);
+                path.style.height = height + 'px';
+                path.style.left = x1 + 'px';
+                path.style.top = Math.min(y1, y2) + 'px';
+            }
+            
+            circuitContainer.appendChild(path);
+            paths.push(path);
+        }
+        
+        // Create data flow animations
+        function createDataFlow() {
+            if (nodes.length === 0 || paths.length === 0) return;
+            
+            const flow = document.createElement('div');
+            flow.className = 'data-flow';
+            
+            // Start at a random node
+            const startNode = nodes[Math.floor(Math.random() * nodes.length)];
+            flow.style.left = startNode.x + 'px';
+            flow.style.top = startNode.y + 'px';
+            
+            circuitContainer.appendChild(flow);
+            
+            // Animate the flow along a random path
+            animateDataFlow(flow, startNode);
+        }
+        
+        // Animate data flow along the circuit
+        function animateDataFlow(flow, currentNode) {
+            // Find connected nodes
+            const connectedNodes = nodes.filter(node => {
+                if (node === currentNode) return false;
+                
+                // Check if there's a direct path (horizontal or vertical)
+                return (
+                    (node.row === currentNode.row && Math.abs(node.col - currentNode.col) === 1) ||
+                    (node.col === currentNode.col && Math.abs(node.row - currentNode.row) === 1)
+                );
+            });
+            
+            if (connectedNodes.length === 0) {
+                // Remove the flow if no connections
+                setTimeout(() => flow.remove(), 1000);
+                return;
+            }
+            
+            // Pick a random connected node
+            const nextNode = connectedNodes[Math.floor(Math.random() * connectedNodes.length)];
+            
+            // Animate to the next node
+            flow.animate([
+                { left: currentNode.x + 'px', top: currentNode.y + 'px' },
+                { left: nextNode.x + 'px', top: nextNode.y + 'px' }
+            ], {
+                duration: 1000,
+                easing: 'linear',
+                fill: 'forwards'
+            }).onfinish = () => {
+                // Continue to the next node or stop randomly
+                if (Math.random() > 0.3) {
+                    animateDataFlow(flow, nextNode);
+                } else {
+                    setTimeout(() => flow.remove(), 500);
+                }
+            };
+        }
+        
+        // Create binary rain
+        function createBinaryRain() {
+            const binary = document.createElement('div');
+            binary.className = 'binary-rain';
+            
+            // Generate a string of random binary digits
+            let binaryString = '';
+            const length = Math.floor(Math.random() * 10) + 5;
+            
+            for (let i = 0; i < length; i++) {
+                binaryString += Math.random() > 0.5 ? '1' : '0';
+            }
+            
+            binary.textContent = binaryString;
+            binary.style.left = Math.random() * window.innerWidth + 'px';
+            binary.style.top = '-20px';
+            binary.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            
+            document.querySelector('.circuit-background').appendChild(binary);
+            
+            // Remove after animation
+            setTimeout(() => binary.remove(), 10000);
+        }
+        
+        // Create hex code elements
+        function createHexElement() {
+            const hex = document.createElement('div');
+            hex.className = 'hex-element';
+            
+            // Generate a random hex code
+            let hexString = '0x';
+            for (let i = 0; i < 4; i++) {
+                hexString += Math.floor(Math.random() * 16).toString(16).toUpperCase();
+            }
+            
+            hex.textContent = hexString;
+            hex.style.left = Math.random() * window.innerWidth + 'px';
+            hex.style.top = Math.random() * window.innerHeight + 'px';
+            
+            document.querySelector('.circuit-background').appendChild(hex);
+            
+            // Remove after animation
+            setTimeout(() => hex.remove(), 15000);
+        }
+        
+        // Trigger glitch effect randomly
+        function triggerGlitch() {
+            const glitchEffect = document.getElementById('glitchEffect');
+            glitchEffect.classList.add('glitch-active');
+            
+            setTimeout(() => {
+                glitchEffect.classList.remove('glitch-active');
+            }, 300);
+        }
+        
+        // Initialize the circuit board
+        function initCircuitBoard() {
+            createNodes();
+            createPaths();
+            
+            // Start data flows
+            setInterval(createDataFlow, 1000);
+            
+            // Create binary rain
+            setInterval(createBinaryRain, 800);
+            
+            // Create hex elements
+            setInterval(createHexElement, 2000);
+            
+            // Trigger glitch effects
+            setInterval(() => {
+                if (Math.random() > 0.8) {
+                    triggerGlitch();
+                }
+            }, 3000);
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            // Clear existing elements
+            circuitContainer.innerHTML = '';
+            nodes.length = 0;
+            paths.length = 0;
+            
+            // Regenerate the circuit board
+            initCircuitBoard();
+        });
+        
+        // Start the animation
+        initCircuitBoard();
+    </script>
+</body>
+</html>

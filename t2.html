@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Shield Defense System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            background: #000;
+            font-family: 'Courier New', monospace;
+        }
+
+        .defense-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, #0a0a1a 0%, #000000 100%);
+            z-index: -1;
+        }
+
+        /* Shield canvas */
+        #shieldCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Digital grid */
+        .digital-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 150, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 150, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: 0;
+            animation: gridPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes gridPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Data packets */
+        .data-packet {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #00ffcc;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ffcc;
+            z-index: 2;
+        }
+
+        .data-packet.malicious {
+            background: #ff3366;
+            box-shadow: 0 0 10px #ff3366;
+        }
+
+        /* Shield segments */
+        .shield-segment {
+            position: absolute;
+            border: 2px solid rgba(0, 150, 255, 0.7);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Firewall particles */
+        .firewall-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(0, 150, 255, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(0, 150, 255, 0.8);
+            z-index: 1;
+        }
+
+        /* Defense status indicators */
+        .defense-indicator {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #00ffcc;
+            font-size: 14px;
+            z-index: 10;
+            text-shadow: 0 0 5px #00ffcc;
+        }
+
+        .status-item {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .status-light {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+            box-shadow: 0 0 5px currentColor;
+        }
+
+        .status-active {
+            background: #00ffcc;
+            color: #00ffcc;
+            animation: pulse 2s infinite;
+        }
+
+        .status-warning {
+            background: #ffaa00;
+            color: #ffaa00;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Threat alert */
+        .threat-alert {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(10, 10, 26, 0.8);
+            border: 1px solid #ff3366;
+            border-radius: 5px;
+            padding: 15px;
+            color: #ff3366;
+            font-size: 14px;
+            z-index: 10;
+            max-width: 300px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .threat-alert.active {
+            opacity: 1;
+        }
+
+        .alert-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .alert-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 50%;
+            background: #ff3366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: alertPulse 1s infinite;
+        }
+
+        @keyframes alertPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* Defense waves */
+        .defense-wave {
+            position: absolute;
+            border: 2px solid rgba(0, 150, 255, 0.7);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
+            z-index: 1;
+            pointer-events: none;
+            animation: waveExpand 2s ease-out forwards;
+        }
+
+        @keyframes waveExpand {
+            0% {
+                width: 50px;
+                height: 50px;
+                opacity: 1;
+            }
+            100% {
+                width: 500px;
+                height: 500px;
+                opacity: 0;
+            }
+        }
+
+        /* Encryption symbols */
+        .encryption-symbol {
+            position: absolute;
+            color: rgba(0, 150, 255, 0.6);
+            font-size: 16px;
+            z-index: 1;
+            animation: symbolFloat 10s linear infinite;
+        }
+
+        @keyframes symbolFloat {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="defense-background">
+        <!-- Digital grid -->
+        <div class="digital-grid"></div>
+        
+        <!-- Shield canvas -->
+        <canvas id="shieldCanvas"></canvas>
+        
+        <!-- Defense status indicators -->
+        <div class="defense-indicator">
+            <div class="status-item">
+                <div class="status-light status-active"></div>
+                <span>SHIELD: ACTIVE</span>
+            </div>
+            <div class="status-item">
+                <div class="status-light status-active"></div>
+                <span>FIREWALL: ONLINE</span>
+            </div>
+            <div class="status-item">
+                <div class="status-light status-active"></div>
+                <span>ENCRYPTION: ENABLED</span>
+            </div>
+        </div>
+        
+        <!-- Threat alert -->
+        <div class="threat-alert" id="threatAlert">
+            <div class="alert-header">
+                <div class="alert-icon">!</div>
+                <span>THREAT DETECTED</span>
+            </div>
+            <div id="threatMessage">Malicious data packet blocked</div>
+        </div>
+    </div>
+
+    <script>
+        // Canvas setup
+        const canvas = document.getElementById('shieldCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Set canvas size
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Shield properties
+        const shield = {
+            x: canvas.width / 2,
+            y: canvas.height / 2,
+            radius: Math.min(canvas.width, canvas.height) * 0.3,
+            segments: 8,
+            rotation: 0,
+            rotationSpeed: 0.001,
+            pulsePhase: 0,
+            pulseSpeed: 0.02
+        };
+        
+        // Shield segments
+        const shieldSegments = [];
+        
+        // Initialize shield segments
+        function initShieldSegments() {
+            shieldSegments.length = 0;
+            
+            for (let i = 0; i < shield.segments; i++) {
+                const angle = (i / shield.segments) * Math.PI * 2;
+                const segment = {
+                    angle: angle,
+                    health: 100,
+                    color: `rgba(0, 150, 255, 0.7)`
+                };
+                shieldSegments.push(segment);
+            }
+        }
+        initShieldSegments();
+        
+        // Draw shield
+        function drawShield() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Update shield position to center
+            shield.x = canvas.width / 2;
+            shield.y = canvas.height / 2;
+            
+            // Update rotation and pulse
+            shield.rotation += shield.rotationSpeed;
+            shield.pulsePhase += shield.pulseSpeed;
+            const pulseFactor = 1 + Math.sin(shield.pulsePhase) * 0.05;
+            
+            // Draw shield segments
+            ctx.save();
+            ctx.translate(shield.x, shield.y);
+            ctx.rotate(shield.rotation);
+            
+            for (let i = 0; i < shield.segments; i++) {
+                const segment = shieldSegments[i];
+                const startAngle = segment.angle;
+                const endAngle = startAngle + (Math.PI * 2) / shield.segments;
+                
+                // Draw segment arc
+                ctx.beginPath();
+                ctx.arc(0, 0, shield.radius * pulseFactor, startAngle, endAngle);
+                ctx.lineWidth = 8;
+                ctx.strokeStyle = segment.color;
+                ctx.stroke();
+                
+                // Draw segment connector
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.lineTo(
+                    Math.cos(startAngle) * shield.radius * pulseFactor,
+                    Math.sin(startAngle) * shield.radius * pulseFactor
+                );
+                ctx.lineWidth = 4;
+                ctx.stroke();
+                
+                // Draw segment connector
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.lineTo(
+                    Math.cos(endAngle) * shield.radius * pulseFactor,
+                    Math.sin(endAngle) * shield.radius * pulseFactor
+                );
+                ctx.lineWidth = 4;
+                ctx.stroke();
+            }
+            
+            // Draw inner shield
+            ctx.beginPath();
+            ctx.arc(0, 0, shield.radius * 0.7 * pulseFactor, 0, Math.PI * 2);
+            ctx.lineWidth = 6;
+            ctx.strokeStyle = 'rgba(0, 200, 255, 0.5)';
+            ctx.stroke();
+            
+            // Draw core
+            ctx.beginPath();
+            ctx.arc(0, 0, shield.radius * 0.3 * pulseFactor, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(0, 220, 255, 0.3)';
+            ctx.fill();
+            ctx.lineWidth = 4;
+            ctx.strokeStyle = 'rgba(0, 220, 255, 0.8)';
+            ctx.stroke();
+            
+            ctx.restore();
+            
+            // Continue animation
+            requestAnimationFrame(drawShield);
+        }
+        drawShield();
+        
+        // Data packets
+        const dataPackets = [];
+        const maxPackets = 20;
+        
+        class DataPacket {
+            constructor() {
+                this.reset();
+            }
+            
+            reset() {
+                // Random position on the edge of the screen
+                const side = Math.floor(Math.random() * 4);
+                
+                switch(side) {
+                    case 0: // Top
+                        this.x = Math.random() * canvas.width;
+                        this.y = -10;
+                        break;
+                    case 1: // Right
+                        this.x = canvas.width + 10;
+                        this.y = Math.random() * canvas.height;
+                        break;
+                    case 2: // Bottom
+                        this.x = Math.random() * canvas.width;
+                        this.y = canvas.height + 10;
+                        break;
+                    case 3: // Left
+                        this.x = -10;
+                        this.y = Math.random() * canvas.height;
+                        break;
+                }
+                
+                // Random target near the shield
+                const angle = Math.random() * Math.PI * 2;
+                const distance = shield.radius * (0.5 + Math.random() * 0.5);
+                this.targetX = shield.x + Math.cos(angle) * distance;
+                this.targetY = shield.y + Math.sin(angle) * distance;
+                
+                // Speed and properties
+                this.speed = 1 + Math.random() * 2;
+                this.size = 4 + Math.random() * 4;
+                this.malicious = Math.random() > 0.7; // 30% chance to be malicious
+                
+                // Create DOM element
+                this.element = document.createElement('div');
+                this.element.className = 'data-packet';
+                if (this.malicious) {
+                    this.element.classList.add('malicious');
+                }
+                this.element.style.width = this.size + 'px';
+                this.element.style.height = this.size + 'px';
+                document.querySelector('.defense-background').appendChild(this.element);
+                
+                this.updatePosition();
+            }
+            
+            updatePosition() {
+                this.element.style.left = this.x + 'px';
+                this.element.style.top = this.y + 'px';
+            }
+            
+            update() {
+                // Move towards target
+                const dx = this.targetX - this.x;
+                const dy = this.targetY - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance > 5) {
+                    this.x += (dx / distance) * this.speed;
+                    this.y += (dy / distance) * this.speed;
+                    this.updatePosition();
+                } else {
+                    // Reached target
+                    if (this.malicious) {
+                        // Malicious packet hits shield
+                        this.hitShield();
+                    } else {
+                        // Legitimate packet passes through
+                        this.passThrough();
+                    }
+                    
+                    // Reset packet
+                    this.element.remove();
+                    this.reset();
+                }
+            }
+            
+            hitShield() {
+                // Find which segment was hit
+                const angle = Math.atan2(this.y - shield.y, this.x - shield.x);
+                const normalizedAngle = (angle - shield.rotation + Math.PI * 2) % (Math.PI * 2);
+                const segmentIndex = Math.floor(normalizedAngle / (Math.PI * 2) * shield.segments);
+                
+                if (segmentIndex >= 0 && segmentIndex < shieldSegments.length) {
+                    // Damage the segment
+                    shieldSegments[segmentIndex].health -= 10;
+                    
+                    // Change color based on health
+                    const health = shieldSegments[segmentIndex].health;
+                    if (health > 70) {
+                        shieldSegments[segmentIndex].color = `rgba(0, 150, 255, 0.7)`;
+                    } else if (health > 30) {
+                        shieldSegments[segmentIndex].color = `rgba(255, 170, 0, 0.7)`;
+                    } else {
+                        shieldSegments[segmentIndex].color = `rgba(255, 51, 102, 0.7)`;
+                    }
+                    
+                    // Create defense wave
+                    createDefenseWave(this.x, this.y);
+                    
+                    // Show threat alert
+                    showThreatAlert("Malicious data packet blocked");
+                    
+                    // Create firewall particles
+                    createFirewallParticles(this.x, this.y);
+                }
+            }
+            
+            passThrough() {
+                // Create a small effect for legitimate packets
+                createFirewallParticles(this.x, this.y, 5);
+            }
+        }
+        
+        // Create data packets
+        for (let i = 0; i < maxPackets; i++) {
+            dataPackets.push(new DataPacket());
+        }
+        
+        // Update data packets
+        function updateDataPackets() {
+            dataPackets.forEach(packet => packet.update());
+            requestAnimationFrame(updateDataPackets);
+        }
+        updateDataPackets();
+        
+        // Create defense wave
+        function createDefenseWave(x, y) {
+            const wave = document.createElement('div');
+            wave.className = 'defense-wave';
+            wave.style.left = (x - 25) + 'px';
+            wave.style.top = (y - 25) + 'px';
+            document.querySelector('.defense-background').appendChild(wave);
+            
+            setTimeout(() => wave.remove(), 2000);
+        }
+        
+        // Create firewall particles
+        function createFirewallParticles(x, y, count = 15) {
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'firewall-particle';
+                
+                // Position at the impact point
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                
+                document.querySelector('.defense-background').appendChild(particle);
+                
+                // Animate particle
+                const angle = Math.random() * Math.PI * 2;
+                const speed = 1 + Math.random() * 3;
+                const lifetime = 500 + Math.random() * 1000;
+                
+                const startTime = Date.now();
+                
+                function animateParticle() {
+                    const elapsed = Date.now() - startTime;
+                    const progress = elapsed / lifetime;
+                    
+                    if (progress < 1) {
+                        const distance = speed * elapsed / 20;
+                        const currentX = x + Math.cos(angle) * distance;
+                        const currentY = y + Math.sin(angle) * distance;
+                        
+                        particle.style.left = currentX + 'px';
+                        particle.style.top = currentY + 'px';
+                        particle.style.opacity = 1 - progress;
+                        
+                        requestAnimationFrame(animateParticle);
+                    } else {
+                        particle.remove();
+                    }
+                }
+                
+                animateParticle();
+            }
+        }
+        
+        // Show threat alert
+        function showThreatAlert(message) {
+            const alert = document.getElementById('threatAlert');
+            const messageElement = document.getElementById('threatMessage');
+            
+            messageElement.textContent = message;
+            alert.classList.add('active');
+            
+            setTimeout(() => {
+                alert.classList.remove('active');
+            }, 3000);
+        }
+        
+        // Create encryption symbols
+        function createEncryptionSymbol() {
+            const symbols = ['⚛', '⚡', '⚕', '⚖', '⚗', '⚙', '⚚', '⚛', '⚜', '⚝'];
+            const symbol = document.createElement('div');
+            symbol.className = 'encryption-symbol';
+            symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            symbol.style.left = Math.random() * window.innerWidth + 'px';
+            symbol.style.top = Math.random() * window.innerHeight + 'px';
+            
+            document.querySelector('.defense-background').appendChild(symbol);
+            
+            // Remove after animation
+            setTimeout(() => symbol.remove(), 10000);
+        }
+        
+        // Create encryption symbols periodically
+        setInterval(createEncryptionSymbol, 2000);
+        
+        // Mouse interaction
+        let mouseX = 0;
+        let mouseY = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            // Create a small defense wave at mouse position occasionally
+            if (Math.random() > 0.9) {
+                createDefenseWave(mouseX, mouseY);
+            }
+        });
+        
+        // Periodically repair shield segments
+        setInterval(() => {
+            shieldSegments.forEach(segment => {
+                if (segment.health < 100) {
+                    segment.health = Math.min(100, segment.health + 5);
+                    
+                    // Update color based on health
+                    if (segment.health > 70) {
+                        segment.color = `rgba(0, 150, 255, 0.7)`;
+                    } else if (segment.health > 30) {
+                        segment.color = `rgba(255, 170, 0, 0.7)`;
+                    } else {
+                        segment.color = `rgba(255, 51, 102, 0.7)`;
+                    }
+                }
+            });
+        }, 1000);
+    </script>
+</body>
+</html>
